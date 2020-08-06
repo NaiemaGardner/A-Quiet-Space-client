@@ -7,11 +7,24 @@ const authEvents = require('./auth/event')
 // require('./example')
 
 $(() => {
+  // Unauthenticated View
+  $('#mainView').hide()
+  $('#authenticatedMain').hide()
+  $('#authenticatedUser').hide()
+  $('#authenticatedEntry').hide()
+  $('#authenticatedSite').hide()
   // Authentication
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('click', authEvents.onSignOut)
+  $('#signUp').on('submit', authEvents.onSignUp)
+  $('#signIn').on('submit', authEvents.onSignIn)
+  $('#changePassword').on('submit', authEvents.onChangePassword)
+  $('.signOut').on('click', authEvents.onSignOut)
+  // Screen Toggling
+  $('#siteContent').on('click', authEvents.onSiteContent)
+  $('.userPage').on('click', authEvents.onUserPage)
+  $('.newEntry').on('click', authEvents.onNewEntry)
+  $('#newPassword').on('click', authEvents.onNewPassword)
+  $('#updateEntry').on('click', authEvents.onUpdateEntry)
+  $('.mainPage').on('click', authEvents.onMainPage)
   // Actions
   // $('div').on('click', function () {
   //   $(this).toggleClass('show-description')

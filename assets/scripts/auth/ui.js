@@ -3,36 +3,47 @@
 const store = require('../store')
 
 const signUpSuccess = function () {
-  $('#sign-up')[0].reset()
-  $('#auth-view').text('Sign up was successful! Sign in now to play.')
+  $('#signUp')[0].reset()
+  $('#authView').text('Sign up was successful! Now sign in.')
 }
 const signUpFailure = function () {
-  $('#auth-view').text('Sign up attempt failed. Please try again.')
+  $('#authView').text('Sign up attempt failed. Have you been here before? Try signing in.')
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#sign-in')[0].reset()
-  $('#main-view').text('Welcome User!')
+  $('#unauthenticated').hide()
+  $('#changePassword').hide()
+  $('#mainView').show()
+  $('#authenticatedMain').show()
+  $('#signIn')[0].reset()
+  $('#mainView').text('Here you are..')
 }
 const signInFailure = function () {
-  $('#auth-view').text('Sign in attempt failed. Please check your credentials and try again.')
+  $('#authView').text('Sign in attempt failed. Double check your credentials and try again.')
 }
 
 const changePasswordSuccess = function () {
-  $('#change-password')[0].reset()
-  $('#main-view').text('Your password has been updated successfully!')
+  $('#changePassword').hide()
+  $('#changePassword')[0].reset()
+  $('#mainView').text('Your password has been saved!')
 }
 const changePasswordFailure = function () {
-  $('#main-view').text('Failed to update your password. Please try again.')
+  $('#changePassword').hide()
+  $('#mainView').text('Could not update your password this time. Try again.')
 }
 
 const signOutSuccess = function () {
-  $('#auth-view').text('User signed out. Come back soon!')
+  $('#unauthenticated').show()
+  $('#authView').text('Signed out. Hope you had a pleasant stay, see you soon!')
+  $('#mainView').hide()
+  $('#authenticatedMain').hide()
+  $('#authenticatedUser').hide()
+  $('#authenticatedSite').hide()
   store.user = null
 }
 const signOutFailure = function () {
-  $('#main-view').text('Sign out attempt failed. Please try again.')
+  $('#mainView').text('Sign out attempt failed. Try again.')
 }
 
 module.exports = {

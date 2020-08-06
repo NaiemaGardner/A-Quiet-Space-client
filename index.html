@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>A Quiet Place</title>
+      <title>A Quiet Space</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -15,91 +15,94 @@
       <header>
         <h1>A Quiet Space</h1>
       </header>
-      <br>
+
+      <!-- App Intro -->
       <div id="unauthenticated">
         <div id="infoBox">
           <p>Personalized Entries
           <span class="info"> ~ curate your quiet</span><br />
           <small>Create, review, edit and delete note-style entries. Publish works privately, for your eyes only, or publicly to share with the community. Use a keyword search to find entries of interest. Imagine a quiet library space, great for brain storming, idea inspiration, issue venting and general stress relief; a space built for you.</small></p>
         </div>
-        <br>
-        <p id="auth-view"></p>
-        <br>
-        <form id="sign-up">
-          <label>Want To Sign Up? Fill Out Form Below:</label>
-          <input type="text" name="credentials[name]" placeholder="What should we call you?">
-          <input type="email" name="credentials[email]" placeholder="Enter Email">
+        <p id="authView"></p>
+        <form id="signUp">
+          <label>Sign Up:</label>
+          <input type="text" name="credentials[name]" placeholder="Your Name">
+          <input type="email" name="credentials[email]" placeholder="Your Email">
           <input type="password" name="credentials[password]" placeholder="Set Password">
           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
           <button type="submit">Sign Up</button>
         </form>
-        <br>
-        <form id="sign-in">
-          <label>You're Here! Sign In Below:</label>
-          <input type="email" name="credentials[email]" placeholder="Enter Email">
-          <input type="password" name="credentials[password]" placeholder="Enter Password">
+        <form id="signIn">
+          <label>Sign In:</label>
+          <input type="email" name="credentials[email]" placeholder="Your Email">
+          <input type="password" name="credentials[password]" placeholder="Your Password">
           <button type="submit">Enter</button>
         </form>
       </div>
-      <br>
-      <p id="mainAttempt"></p>
-      <div id="authenticatedMainPage">
-        <h2 id="welcome">Welcome User!</h2>
-        <br>
+
+      <!-- Main Page -->
+      <p id="mainView"></p>
+      <div id="authenticatedMain">
+        <h2 class="welcome">Welcome User!</h2>
         <div class="blogEntry">USER ENTRIES GO HERE</div>
-        <form id="searchBarMain">
-          <label>Search Keyword:</label>
-          <input type="text" name="search[keyword]" placeholder="I want to find...">
-          <button type="submit">Find</button>
-        </form>
-        <br>
         <nav id="buttonBarMain">
-          <button type="button" id="siteContent">View All Entries</button>
-          <button type="button" id="userPage">View My Entries</button>
-          <button type="button" id="newEntry">Create New Entry</button>
+          <button type="button" class="userPage">My Entries</button>
+          <button type="button" class="newEntry">Create New Entry</button>
           <button type="button" id="newPassword">Change Password</button>
-          <button type="button" id="signOut">Sign Out</button>
+          <form id="changePassword">
+            <input type="text" name="passwords[old]" placeholder="Old Password">
+            <input type="text" name="passwords[new]" placeholder="New Password">
+            <button type="submit">Change Password</button>
+          </form>
+          <button type="button" id="siteContent">View All Entries</button>
+          <button type="button" class="signOut">Sign Out</button>
         </nav>
       </div>
-      <br>
-      <div id="authenticatedUserPage">
-        <h2 id="userWelcome"></h2>
-        <div class="blogEntry">USER ENTRIES GO HERE</div>
+
+      <!-- User Page -->
+      <div id="authenticatedUser">
+        <h2 class="welcome">User's Space</h2>
         <form id="searchBarUser">
-          <label>Search Keyword:</label>
+          <label>Keyword Search:</label>
           <input type="text" name="search[keyword]" placeholder="I want to find...">
           <button type="submit">Find</button>
         </form>
+        <div class="blogEntry">USER ENTRIES GO HERE</div>
         <nav id="buttonBarUser">
-          <button type="button" id="newEntryUser">Create New Entry</button>
-          <button type="button" id="updateEntryUser">Edit Entry</button>
-          <button type="button" id="deleteEntryUser">Delete Entry</button>
-          <button type="button" id="returnUser">Return to Main</button>
+          <button type="button" class="newEntry">Create New Entry</button>
+          <button type="button" id="updateEntry">Edit Entry</button>
+          <button type="button" id="deleteEntry">Delete Entry</button>
+          <button type="button" class="mainPage">Return to Main</button>
+          <button type="button" class="signOut">Sign Out</button>
         </nav>
       </div>
-      <br>
-      <div id="authenticatedEditPage">
+
+      <!-- Entry Page -->
+      <div id="authenticatedEntry">
         <form id="userEntry">
           <label>Title:</label>
           <input type="text" name="entry[title]" placeholder="Your Work">
           <label>Entry:</label>
-          <input type="text" name="entry[content]" placeholder="Your Space...">
+          <input type="text" name="entry[content]" placeholder="Your Space..."><br />
           <button type="submit" id="publishEntry">Publish</button><p>Just For Me</p>
           <button type="submit" id="postEntry">Post</button><p>For Everyone To See</p>
         </form>
-        <button type="button" id="returnEntry">Return to Entries</button>
-        <button type="button" id="returnMain">Return to Main</button>
+        <button type="button" class="userPage">My Entries</button>
+        <button type="button" class="mainPage">Return to Main</button>
       </div>
-      <br>
-      <div id="authenticated-sitePage">
+
+      <!-- Site Page -->
+      <div id="authenticatedSite">
+        <h2 class="welcome">The Works!</h2>
         <form id="searchBarSite">
-          <label>Search Keyword:</label>
+          <label>Keyword Search:</label>
           <input type="text" name="search[keyword]" placeholder="I want to find...">
           <button type="submit">Find</button>
         </form>
         <div id="siteEntry">USER ENTRIES GO HERE</div>
-        <button type="button" id="returnSiteMain">Return to Main</button>
-        <button type="button" id="signOutSite">Sign Out</button>
+        <button type="button" class="userPage">My Entries</button>
+        <button type="button" class="mainPage">Return to Main</button>
+        <button type="button" class="signOut">Sign Out</button>
       </div>
     </body>
 </html>
