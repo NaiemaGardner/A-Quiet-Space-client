@@ -44,7 +44,7 @@
       <p id="mainView"></p>
       <div id="authenticatedMain">
         <h2 class="welcome">Welcome User!</h2>
-        <div class="blogEntry">USER ENTRIES GO HERE</div>
+        <!-- <div class="blogEntry">USER ENTRIES GO HERE</div> -->
         <nav id="buttonBarMain">
           <button type="button" class="userPage">My Entries</button>
           <button type="button" class="newEntry">Create New Entry</button>
@@ -63,15 +63,15 @@
       <div id="authenticatedUser">
         <h2 class="welcome">User's Space</h2>
         <form id="searchBarUser">
-          <label>Keyword Search:</label>
-          <input type="text" name="search[keyword]" placeholder="I want to find...">
-          <button type="submit">Find</button>
+          <label>ID Search:</label>
+          <input type="text" name="entry[:id]" placeholder="I want to find...">
+          <button type="submit" id="showEntry">Find Entry</button>
+          <button type="submit" id="updateEntry">Edit Entry</button>
+          <button type="submit" id="deleteEntry">Delete Entry</button>
         </form>
         <div class="blogEntry">USER ENTRIES GO HERE</div>
         <nav id="buttonBarUser">
           <button type="button" class="newEntry">Create New Entry</button>
-          <button type="button" id="updateEntry">Edit Entry</button>
-          <button type="button" id="deleteEntry">Delete Entry</button>
           <button type="button" class="mainPage">Return to Main</button>
           <button type="button" class="signOut">Sign Out</button>
         </nav>
@@ -83,7 +83,7 @@
           <label>Title:</label>
           <input type="text" name="entry[title]" placeholder="Your Work">
           <label>Entry:</label>
-          <input type="text" name="entry[content]" placeholder="Your Space..."><br />
+          <input type="text" name="entry[text]" placeholder="Your Space..."><br />
           <button type="submit" id="publishEntry">Publish</button><p>Just For Me</p>
           <button type="submit" id="postEntry">Post</button><p>For Everyone To See</p>
         </form>
@@ -94,11 +94,11 @@
       <!-- Site Page -->
       <div id="authenticatedSite">
         <h2 class="welcome">The Works!</h2>
-        <form id="searchBarSite">
+        <!-- <form id="searchBarSite">
           <label>Keyword Search:</label>
           <input type="text" name="search[keyword]" placeholder="I want to find...">
           <button type="submit">Find</button>
-        </form>
+        </form> -->
         <div id="siteEntry">USER ENTRIES GO HERE</div>
         <button type="button" class="userPage">My Entries</button>
         <button type="button" class="mainPage">Return to Main</button>
