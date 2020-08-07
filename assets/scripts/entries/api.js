@@ -2,9 +2,15 @@
 
 const config = require('../config')
 
-const getEntries = () => {
+const getAllEntries = () => {
   return $.ajax({
     url: config.apiUrl + '/entries'
+  })
+}
+
+const getMyEntries = () => {
+  return $.ajax({
+    url: config.apiUrl + '/entries/:id'
   })
 }
 
@@ -33,7 +39,8 @@ const deleteEntry = () => {
 }
 
 module.exports = {
-  getEntries,
+  getAllEntries,
+  getMyEntries,
   showEntry,
   addEntry,
   updateEntry,

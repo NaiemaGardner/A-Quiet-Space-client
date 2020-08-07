@@ -3,10 +3,17 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 
-const onGetEntries = (event) => {
+const onGetAllEntries = (event) => {
   event.preventDefault()
-  api.getEntries()
-    .then(ui.getEntriesSuccess)
+  api.getAllEntries()
+    .then(ui.getAllEntriesSuccess)
+    .catch(ui.failure)
+}
+
+const onGetMyEntries = (event) => {
+  event.preventDefault()
+  api.getMyEntries()
+    .then(ui.getMyEntriesSuccess)
     .catch(ui.failure)
 }
 
@@ -39,7 +46,8 @@ const onDeleteEntry = (event) => {
 }
 
 const addHandlers = () => {
-  $('.userPage').on('click', onGetEntries)
+  $('#siteContent').on('click', onGetAllEntries)
+  $('.userPage').on('click', onGetMyEntries)
   $('#showEntry').on('click', onShowEntry)
   $('#publishEntry').on('click', onAddEntry)
   $('#updateEntry').on('click', onUpdateEntry)
