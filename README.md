@@ -29,6 +29,7 @@ The project requirements were used to inspire the flow of the application. Since
 - HTML/CSS
 - Bootstrap
 - Javascript
+- Handlebars
 
 ### Unsolved Problems
 
