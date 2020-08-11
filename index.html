@@ -18,9 +18,9 @@
 
       <!-- App Intro -->
       <div id="unauthenticated">
-        <div id="infoBox">
+        <div class="info-box">
           <p>Personalized Entries
-          <span class="info"> ~ curate your quiet</span><br />
+          <span id="info"> ~ curate your quiet</span><br />
           <small>Create, review, edit and delete note-style entries. Publish works privately, for your eyes only, or publicly to share with the community. Use a keyword search to find entries of interest. Imagine a quiet library space, great for brain storming, idea inspiration, issue venting and general stress relief; a space built for you.</small></p>
         </div>
         <p id="authView"></p>
@@ -84,8 +84,7 @@
           <input type="text" name="entry[title]" placeholder="Your Work">
           <label>Entry:</label>
           <input type="text" name="entry[text]" placeholder="Your Space..."><br />
-          <button type="submit" id="publishEntry">Publish</button><p>Just For Me</p>
-          <button type="submit" id="postEntry">Post</button><p>For Everyone To See</p>
+          <button type="submit">Publish</button>
         </form>
         <button type="button" class="userPage">My Entries</button>
         <button type="button" class="mainPage">Return to Main</button>

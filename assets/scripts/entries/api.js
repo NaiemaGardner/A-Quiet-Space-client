@@ -1,48 +1,54 @@
 'use strict'
 
+const store = require('../store')
 const config = require('../config')
 
-const getAllEntries = () => {
+// const getAllEntries = () => {
+//   return $.ajax({
+//     url: config.apiUrl + '/entries'
+//   })
+// }
+//
+// const getMyEntries = () => {
+//   return $.ajax({
+//     url: config.apiUrl + '/entries/:id'
+//   })
+// }
+//
+// const showEntry = () => {
+//   return $.ajax({
+//     url: config.apiUrl + '/entries/:id'
+//   })
+// }
+
+const addEntry = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/entries'
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/entries',
+    method: 'POST',
+    data: formData
   })
 }
 
-const getMyEntries = () => {
-  return $.ajax({
-    url: config.apiUrl + '/entries/:id'
-  })
-}
-
-const showEntry = () => {
-  return $.ajax({
-    url: config.apiURL + '/entries/:id'
-  })
-}
-
-const addEntry = () => {
-  return $.ajax({
-    url: config.apiURL + '/entries'
-  })
-}
-
-const updateEntry = () => {
-  return $.ajax({
-    url: config.apiURL + '/entries/:id'
-  })
-}
-
-const deleteEntry = () => {
-  return $.ajax({
-    url: config.apiURL + '/entries/:id'
-  })
-}
+// const updateEntry = () => {
+//   return $.ajax({
+//     url: config.apiUrl + '/entries/:id'
+//   })
+// }
+//
+// const deleteEntry = () => {
+//   return $.ajax({
+//     url: config.apiUrl + '/entries/:id'
+//   })
+// }
 
 module.exports = {
-  getAllEntries,
-  getMyEntries,
-  showEntry,
-  addEntry,
-  updateEntry,
-  deleteEntry
+//   // getAllEntries,
+//   // getMyEntries,
+//   // showEntry,
+  addEntry
+//   // updateEntry,
+//   // deleteEntry
 }
