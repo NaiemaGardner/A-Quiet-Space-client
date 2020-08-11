@@ -38,4 +38,4 @@ In future iterations I would like to allow users to be able to CRUD comments for
 ## Images
 
 #### Wireframe:
-![Wireframe](https://imgur.com/2tUGkTe)
+[Wireframe](https://imgur.com/2tUGkTe)
