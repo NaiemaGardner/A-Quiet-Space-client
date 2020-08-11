@@ -15,9 +15,9 @@ $(() => {
   $('#authenticatedEntry').hide()
   $('#authenticatedSite').hide()
   // Authentication
-  $(() => {
-    authEvents.addHandlers()
-  })
+  // $(() => {
+  //   authEvents.addHandlers()
+  // })
   $('#signUp').on('submit', authEvents.onSignUp)
   $('#signIn').on('submit', authEvents.onSignIn)
   $('#changePassword').on('submit', authEvents.onChangePassword)
@@ -30,9 +30,9 @@ $(() => {
   $('#updateEntry').on('click', authEvents.onUpdateEntry)
   $('.mainPage').on('click', authEvents.onMainPage)
   // Actions
-  $(() => {
-    entryEvents.addHandlers()
-  })
+  // $(() => {
+  //   entryEvents.addHandlers()
+  // })
   $('#userEntry').on('submit', entryEvents.onAddEntry)
   // $('#info-box').on('click', function () {
   //   $(this).toggleClass('show-description')
