@@ -24,7 +24,6 @@ $(() => {
   $('.signOut').on('click', authEvents.onSignOut)
   // Screen Toggling
   $('#siteContent').on('click', authEvents.onSiteContent)
-  $('.userPage').on('click', authEvents.onUserPage)
   $('.newEntry').on('click', authEvents.onNewEntry)
   $('#newPassword').on('click', authEvents.onNewPassword)
   $('#updateEntry').on('click', authEvents.onUpdateEntry)
@@ -33,6 +32,7 @@ $(() => {
   // $(() => {
   //   entryEvents.addHandlers()
   // })
+  $('.userPage').on('click', entryEvents.onGetMyEntries)
   $('#userEntry').on('submit', entryEvents.onAddEntry)
   // $('#info-box').on('click', function () {
   //   $(this).toggleClass('show-description')

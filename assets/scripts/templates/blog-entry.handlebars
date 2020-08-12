@@ -1,9 +1,12 @@
 <div class="container">
    <ul id="entries">
    {{#each entries as |entry|}}
-     <li>
-       {{entry.title}}  {{entry.text}}
-     </li>
+    <div class="title">
+      <h3>{{entry.title}}</h3>
+    </div>
+    <div class="entry">
+      {{entry.text}}
+    </div>
    {{/each}}
    </ul>
 </div>

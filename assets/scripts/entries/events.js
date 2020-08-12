@@ -11,13 +11,19 @@ const getFormFields = require('../../../lib/get-form-fields')
 //     .catch(ui.failure)
 // }
 
-// const onGetMyEntries = (event) => {
-//   event.preventDefault()
-//   api.getMyEntries()
-//     .then(ui.getMyEntriesSuccess)
-//     .catch(ui.failure)
-// }
-//
+const onGetMyEntries = (event) => {
+  event.preventDefault()
+  $('#authenticatedMain').hide()
+  $('#authenticatedEntry').hide()
+  $('#authenticatedSite').hide()
+  $('#authenticatedUser').show()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.getMyEntries(formData)
+    .then(ui.getMyEntriesSuccess)
+    .catch(ui.failure)
+}
+
 // const onShowEntry = (event) => {
 //   event.preventDefault()
 //   api.showEntry()
@@ -49,5 +55,6 @@ const onAddEntry = (event) => {
 // }
 
 module.exports = {
-  onAddEntry
+  onAddEntry,
+  onGetMyEntries
 }

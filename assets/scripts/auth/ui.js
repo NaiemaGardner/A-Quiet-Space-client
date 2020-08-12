@@ -41,6 +41,7 @@ const signOutSuccess = function () {
   $('#authenticatedUser').hide()
   $('#authenticatedSite').hide()
   store.user = null
+  $('.container').text('')
 }
 const signOutFailure = function () {
   $('#mainView').text('Sign out attempt failed. Try again.')

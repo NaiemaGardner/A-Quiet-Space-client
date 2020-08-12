@@ -8,13 +8,18 @@ const config = require('../config')
 //     url: config.apiUrl + '/entries'
 //   })
 // }
-//
-// const getMyEntries = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/entries/:id'
-//   })
-// }
-//
+
+const getMyEntries = (formData) => {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/entries/:id',
+    method: 'GET',
+    data: formData
+  })
+}
+
 // const showEntry = () => {
 //   return $.ajax({
 //     url: config.apiUrl + '/entries/:id'
@@ -46,8 +51,8 @@ const addEntry = (formData) => {
 
 module.exports = {
 //   // getAllEntries,
-//   // getMyEntries,
-//   // showEntry,
+  getMyEntries,
+  //   // showEntry,
   addEntry
 //   // updateEntry,
 //   // deleteEntry

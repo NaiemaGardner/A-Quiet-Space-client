@@ -50,20 +50,13 @@ const onSiteContent = function (event) {
   $('#authenticatedSite').show()
 }
 
-const onUserPage = function (event) {
-  event.preventDefault()
-  $('#authenticatedMain').hide()
-  $('#authenticatedEntry').hide()
-  $('#authenticatedSite').hide()
-  $('#authenticatedUser').show()
-}
-
 const onMainPage = function (event) {
   event.preventDefault()
   $('#authenticatedUser').hide()
   $('#authenticatedEntry').hide()
   $('#authenticatedSite').hide()
   $('#authenticatedMain').show()
+  $('.container').text('')
 }
 
 const onNewEntry = function (event) {
@@ -71,6 +64,7 @@ const onNewEntry = function (event) {
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()
   $('#authenticatedEntry').show()
+  $('.container').text('')
 }
 
 const onUpdateEntry = function (event) {
@@ -85,7 +79,6 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onUserPage,
   onNewEntry,
   onNewPassword,
   onUpdateEntry,

@@ -7,11 +7,13 @@ const showEntriesTemplate = require('../templates/blog-entry.handlebars')
 //   console.log(data)
 // }
 
-// const getMyEntriesSuccess = (data) => {
-//   $('mainView').text('Wow, check out all of your entries!')
-//   console.log(data)
-// }
-//
+const getMyEntriesSuccess = (data) => {
+  $('#mainView').text('Entries galore!')
+  console.log(data)
+  const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
+  $('.blogEntry').append(showEntriesHtml)
+}
+
 // const showEntrySuccess = (data) => {
 //   $('mainView').text('Here is the entry you requested. What would you like to do next?')
 //   console.log(data)
@@ -45,7 +47,7 @@ const failure = (error) => {
 
 module.exports = {
   // getAllEntriesSuccess,
-  // getMyEntriesSuccess,
+  getMyEntriesSuccess,
   // showEntrySuccess,
   addEntrySuccess,
   // updateEntrySuccess,
