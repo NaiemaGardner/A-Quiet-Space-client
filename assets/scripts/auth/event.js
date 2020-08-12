@@ -45,11 +45,6 @@ const onNewPassword = function (event) {
   $('#changePassword').show()
 }
 
-const onSiteContent = function (event) {
-  $('#authenticatedMain').hide()
-  $('#authenticatedSite').show()
-}
-
 const onMainPage = function (event) {
   event.preventDefault()
   $('#authenticatedUser').hide()
@@ -82,6 +77,5 @@ module.exports = {
   onNewEntry,
   onNewPassword,
   onUpdateEntry,
-  onMainPage,
-  onSiteContent
+  onMainPage
 }

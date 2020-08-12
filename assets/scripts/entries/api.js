@@ -3,11 +3,16 @@
 const store = require('../store')
 const config = require('../config')
 
-// const getAllEntries = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/entries'
-//   })
-// }
+const getAllEntries = (formData) => {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/entries',
+    method: 'GET',
+    data: formData
+  })
+}
 
 const getMyEntries = (formData) => {
   return $.ajax({
@@ -50,7 +55,7 @@ const addEntry = (formData) => {
 // }
 
 module.exports = {
-//   // getAllEntries,
+  getAllEntries,
   getMyEntries,
   //   // showEntry,
   addEntry

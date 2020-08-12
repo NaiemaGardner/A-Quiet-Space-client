@@ -23,7 +23,6 @@ $(() => {
   $('#changePassword').on('submit', authEvents.onChangePassword)
   $('.signOut').on('click', authEvents.onSignOut)
   // Screen Toggling
-  $('#siteContent').on('click', authEvents.onSiteContent)
   $('.newEntry').on('click', authEvents.onNewEntry)
   $('#newPassword').on('click', authEvents.onNewPassword)
   $('#updateEntry').on('click', authEvents.onUpdateEntry)
@@ -34,6 +33,7 @@ $(() => {
   // })
   $('.userPage').on('click', entryEvents.onGetMyEntries)
   $('#userEntry').on('submit', entryEvents.onAddEntry)
+  $('#siteContent').on('click', entryEvents.onGetAllEntries)
   // $('#info-box').on('click', function () {
   //   $(this).toggleClass('show-description')
   // })
