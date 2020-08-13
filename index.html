@@ -41,33 +41,32 @@
       </div>
 
       <!-- Main Page -->
-      <p id="mainView"></p>
       <div id="authenticatedMain">
         <h2 class="welcome">Welcome User!</h2>
         <!-- <div class="blogEntry">USER ENTRIES GO HERE</div> -->
+        <p class="mainView"></p>
         <nav id="buttonBarMain">
           <button type="button" class="userPage">My Entries</button>
           <button type="button" class="newEntry">Create New Entry</button>
           <button type="button" id="newPassword">Change Password</button>
-          <form id="changePassword">
-            <input type="text" name="passwords[old]" placeholder="Old Password">
-            <input type="text" name="passwords[new]" placeholder="New Password">
-            <button type="submit">Change Password</button>
-          </form>
           <button type="button" id="siteContent">View All Entries</button>
           <button type="button" class="signOut">Sign Out</button>
         </nav>
+        <form id="changePassword">
+          <input type="text" name="passwords[old]" placeholder="Old Password">
+          <input type="text" name="passwords[new]" placeholder="New Password">
+          <button type="submit">Change Password</button>
+        </form>
       </div>
 
       <!-- User Page -->
       <div id="authenticatedUser">
         <h2 class="welcome">User's Space</h2>
+        <p class="mainView"></p>
         <form id="searchBarUser">
           <label>ID Search:</label>
           <input type="text" name="entry[:id]" placeholder="I want to find...">
           <button type="submit" id="showEntry">Find Entry</button>
-          <button type="submit" id="updateEntry">Edit Entry</button>
-          <button type="submit" id="deleteEntry">Delete Entry</button>
         </form>
         <div class="blogEntry"></div>
         <nav id="buttonBarUser">
@@ -79,6 +78,7 @@
 
       <!-- Entry Page -->
       <div id="authenticatedEntry">
+        <p class="mainView"></p>
         <form id="userEntry">
           <label>Title:</label>
           <input type="text" name="entry[title]" placeholder="Your Work">
@@ -93,6 +93,7 @@
       <!-- Site Page -->
       <div id="authenticatedSite">
         <h2 class="welcome">The Works!</h2>
+        <p class="mainView"></p>
         <!-- <form id="searchBarSite">
           <label>Keyword Search:</label>
           <input type="text" name="search[keyword]" placeholder="I want to find...">

@@ -42,12 +42,17 @@ const addEntry = (formData) => {
   })
 }
 
-// const updateEntry = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/entries/:id'
-//   })
-// }
-//
+const updateEntry = (formData) => {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/entries/:id',
+    method: 'PATCH',
+    data: formData
+  })
+}
+
 // const deleteEntry = () => {
 //   return $.ajax({
 //     url: config.apiUrl + '/entries/:id'
@@ -58,7 +63,7 @@ module.exports = {
   getAllEntries,
   getMyEntries,
   //   // showEntry,
-  addEntry
-//   // updateEntry,
+  addEntry,
+  updateEntry
 //   // deleteEntry
 }

@@ -9,7 +9,7 @@ const entryEvents = require('./entries/events')
 
 $(() => {
   // Unauthenticated View
-  $('#mainView').hide()
+  $('.mainView').hide()
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()
   $('#authenticatedEntry').hide()
@@ -34,6 +34,7 @@ $(() => {
   $('.userPage').on('click', entryEvents.onGetMyEntries)
   $('#userEntry').on('submit', entryEvents.onAddEntry)
   $('#siteContent').on('click', entryEvents.onGetAllEntries)
+  $('.updateEntry').on('click', entryEvents.onUpdateEntry)
   // $('#info-box').on('click', function () {
   //   $(this).toggleClass('show-description')
   // })

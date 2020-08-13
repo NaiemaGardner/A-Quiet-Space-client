@@ -1,5 +1,4 @@
-<div class="container">
-   <ul id="entries">
+<div class="entryContainer">
    {{#each entries as |entry|}}
     <div class="title">
       <h3>{{entry.title}}</h3>
@@ -7,6 +6,15 @@
     <div class="entry">
       {{entry.text}}
     </div>
+    <nav class="buttonBarEntry">
+      <button class="updateEntry">Edit</button>
+      <button class="deleteEntry">Delete</button>
+    </nav>
+    <form class="editEntry">
+      <label>Title:</label>
+      <input type="text" name="entry[title]" placeholder="Your Work">
+      <label>Entry:</label>
+      <input type="text" name="entry[text]" placeholder="Your Space..."><br />
+      <button type="submit">Save</button>
    {{/each}}
-   </ul>
 </div>

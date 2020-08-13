@@ -12,12 +12,13 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
+  console.log(store.user)
   $('#unauthenticated').hide()
   $('#changePassword').hide()
-  $('#mainView').show()
+  $('.mainView').show()
   $('#authenticatedMain').show()
   $('#signIn')[0].reset()
-  $('#mainView').text('Here you are..')
+  $('.mainView').text('Here you are..')
 }
 const signInFailure = function () {
   $('#authView').text('Sign in attempt failed. Double check your credentials and try again.')
@@ -26,25 +27,25 @@ const signInFailure = function () {
 const changePasswordSuccess = function () {
   $('#changePassword').hide()
   $('#changePassword')[0].reset()
-  $('#mainView').text('Your password has been saved!')
+  $('.mainView').text('Your password has been saved!')
 }
 const changePasswordFailure = function () {
   $('#changePassword').hide()
-  $('#mainView').text('Could not update your password this time. Try again.')
+  $('.mainView').text('Could not update your password this time. Try again.')
 }
 
 const signOutSuccess = function () {
   $('#unauthenticated').show()
   $('#authView').text('Signed out. Hope you had a pleasant stay, see you soon!')
-  $('#mainView').hide()
+  $('.mainView').hide()
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()
   $('#authenticatedSite').hide()
   store.user = null
-  $('.container').text('')
+  $('.entryContainer').text('')
 }
 const signOutFailure = function () {
-  $('#mainView').text('Sign out attempt failed. Try again.')
+  $('.mainView').text('Sign out attempt failed. Try again.')
 }
 
 module.exports = {

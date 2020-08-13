@@ -4,6 +4,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
 
+// Entry Events
 const onGetAllEntries = (event) => {
   event.preventDefault()
   $('#authenticatedMain').hide()
@@ -20,6 +21,7 @@ const onGetMyEntries = (event) => {
   $('#authenticatedMain').hide()
   $('#authenticatedEntry').hide()
   $('#authenticatedSite').hide()
+  $('.editEntry').hide()
   $('#authenticatedUser').show()
   const form = event.target
   const formData = getFormFields(form)
@@ -44,13 +46,16 @@ const onAddEntry = (event) => {
     .catch(ui.failure)
 }
 
-// const onUpdateEntry = (event) => {
-//   event.preventDefault()
-//   api.updateEntry()
-//     .then(ui.updateEntrySuccess)
-//     .catch(ui.failure)
-// }
-//
+const onUpdateEntry = (event) => {
+  event.preventDefault()
+  $('.editEntry').show()
+  const form = event.target
+  const formData = getFormFields(form)
+  $('.editEntry').on('submit', api.updateEntry(formData))
+    .then(ui.updateEntrySuccess)
+    .catch(ui.failure)
+}
+
 // const onDeleteEntry = (event) => {
 //   event.preventDefault()
 //   api.deleteEntry()
@@ -61,5 +66,6 @@ const onAddEntry = (event) => {
 module.exports = {
   onGetAllEntries,
   onGetMyEntries,
-  onAddEntry
+  onAddEntry,
+  onUpdateEntry
 }

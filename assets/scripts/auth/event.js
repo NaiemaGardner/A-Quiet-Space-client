@@ -51,7 +51,7 @@ const onMainPage = function (event) {
   $('#authenticatedEntry').hide()
   $('#authenticatedSite').hide()
   $('#authenticatedMain').show()
-  $('.container').text('')
+  $('.entryContainer').text('')
 }
 
 const onNewEntry = function (event) {
@@ -59,7 +59,7 @@ const onNewEntry = function (event) {
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()
   $('#authenticatedEntry').show()
-  $('.container').text('')
+  $('.entryContainer').text('')
 }
 
 const onUpdateEntry = function (event) {
