@@ -37,9 +37,9 @@ $(() => {
   // })
   $('#siteContent').on('click', entryEvents.onGetAllEntries)
   $('.userPage').on('click', entryEvents.onGetMyEntries)
-  $('#userEntry').on('submit', entryEvents.onAddEntry)
+  $('.user-entry').on('submit', entryEvents.onAddEntry)
   $('#editEntry').on('submit', entryEvents.onUpdateEntry)
-  $('.btn btn-primary show').on('click', entryEvents.onShowEntry)
+  $('.blog-entry').on('click', entryEvents.onShowEntry)
   // $('#info-box').on('click', function () {
   //   $(this).toggleClass('show-description')
   // })

@@ -1,12 +1,11 @@
 {{#each entries as |entry|}}
-<main class="container col-md-6">
-  <div class="card">
-    <div class="card border-primary mb-3">
-        <h3 class="card-header">{{entry.title}}</h3>
+  <main class="container col-md-6">
+    <div class="card">
+      <div class="card border-primary mb-3">
+          <h3 class="card-header">{{entry.title}}</h3>
           <div class="card-body text-primary">
-            <p class="card-text">{{entry.text}}</p>
-          </div>
+          <p class="card-text">{{entry.text}}</p></div>
       </div>
     </div>
   </main>
-  {{/each}}
+{{/each}}

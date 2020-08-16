@@ -4,13 +4,13 @@ const store = require('../store')
 
 const signUpSuccess = function (response) {
   $('.sign-up')[0].reset()
-  $('.auth-view').text('Sign up was successful! Now sign in.')
+  $('.auth-view').text('Sign up success! Now sign in.')
   $('.left-button').show()
   $('.sign-up').hide()
 }
 const signUpFailure = function () {
   $('.sign-up')[0].reset()
-  $('.auth-view').text('Sign up attempt failed. Have you been here before? Try signing in.')
+  $('.auth-view').text('Sign up failed. Have you been here before? Try signing in.')
   $('.left-button').show()
   $('.sign-up').hide()
 }
@@ -29,7 +29,7 @@ const signInSuccess = function (response) {
 }
 const signInFailure = function () {
   $('.sign-in')[0].reset()
-  $('.auth-view').text('Sign in attempt failed. Double check your credentials and try again.')
+  $('.auth-view').text('Sign in failed. Check your credentials and try again.')
   $('.right-button').show()
   $('.sign-in').hide()
 }
@@ -46,7 +46,7 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   $('#unauthenticated').show()
-  $('.auth-view').text('Signed out. Hope you had a pleasant stay, see you soon!')
+  $('.auth-view').text('Hope you had a pleasant stay, see you soon!')
   $('.main-view').hide()
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()

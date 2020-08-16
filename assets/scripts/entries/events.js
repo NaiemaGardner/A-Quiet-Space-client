@@ -29,9 +29,9 @@ const onGetMyEntries = (event) => {
 
 const onShowEntry = (event) => {
   event.preventDefault()
-  const entryId = $(event.target).closest('main')
-  store.entry.id = entryId.entries._id
-  api.showEntry(store.entry.id)
+  const entryIndex = $(event.target).closest('main').index()
+  const entryId = store.user.entries[entryIndex]._id
+  api.showEntry(entryId)
     .then(ui.showEntrySuccess)
     .catch(ui.failure)
 }

@@ -4,8 +4,8 @@ $text-color: #0011a4;
 $sub-text-color: #00707e;
 $box-color: rgba(0, 146, 164, .35);
 $box-text-color: #fff;
-$com-text-color: #009ba2;
-$name-text-color: #00ccd5;
+$com-text-color: #005155;
+$name-text-color: rgba(0, 190, 177, .7);
 
 body {
   background-attachment: fixed;
@@ -100,10 +100,33 @@ h1 {
 
 button {
   background-color: $box-color;
+  border-radius: 8%;
   color: $box-text-color;
   font-family: 'Courier New', monospace, sans-serif;
   font-size: 16px;
   padding: 5px;
+}
+
+.user-entry {
+  background-color: $box-color;
+  color: $text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  height: 700px;
+  line-height: 1.8;
+  margin: auto;
+  padding: 50px;
+  width: 630px;
+}
+
+.title-input {
+  height: 40px;
+  width: 410px;
+}
+
+.text-input {
+  height: 500px;
+  width: 500px;
 }
 // $card-background-color: #fff;
 //

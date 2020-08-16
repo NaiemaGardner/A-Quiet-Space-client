@@ -59,7 +59,7 @@
 
       <!-- User Page -->
       <div id="authenticatedUser">
-        <h2 class="welcome">User's Space</h2>
+        <h2 class="welcome"></h2>
         <p class="main-view"></p>
         <nav id="buttonBarUser">
           <button type="button" class="newEntry">New Entry</button>
@@ -79,16 +79,18 @@
 
       <!-- Entry Page -->
       <div id="authenticatedEntry">
-        <p class="main-view"></p>
-        <form id="userEntry">
-          <label>Title:</label>
-          <input type="text" name="entry[title]" placeholder="Your Work">
-          <label>Entry:</label>
-          <input type="text" name="entry[text]" placeholder="Your Space..."><br />
+        <form class="user-entry">
+          <label>Title</label><br />
+          <input class="title-input" type="text" name="entry[title]" placeholder="your work"><br />
+          <label>Create</label><br />
+          <input class="text-input" type="text" name="entry[text]" placeholder="your way..."><br />
           <button type="submit">Publish</button>
-        </form>
+        </form><br />
+        <p class="main-view"></p>
         <button type="button" class="userPage">My Entries</button>
         <button type="button" class="mainPage">Return to Main</button>
+        <button type="button" id="siteContent">View All Entries</button>
+        <button type="button" class="signOut">Sign Out</button>
       </div>
 
       <!-- Site Page -->

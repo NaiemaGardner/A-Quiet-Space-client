@@ -59,7 +59,7 @@ const onNewEntry = function (event) {
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()
   $('#authenticatedEntry').show()
-  $('.card-deck').text('')
+  $('.main-view').text('the happy space')
 }
 
 const onUpdateEntry = function (event) {
