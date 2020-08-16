@@ -1,5 +1,124 @@
 @import '~bootstrap/scss/bootstrap';
 
+$text-color: #0011a4;
+$sub-text-color: #00707e;
+$box-color: rgba(0, 146, 164, .35);
+$box-text-color: #fff;
+$com-text-color: #009ba2;
+$name-text-color: #00ccd5;
+
+body {
+  background-attachment: fixed;
+  background-image: url('public/Bluebkgd4.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+h1 {
+  color: $text-color;
+  font-family: fantasy, monospace, sans-serif;
+  font-size: 80px;
+  font-weight: 600px;
+  padding: 50px;
+}
+
+.sub-title {
+  color: $text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+}
+
+.sub-text {
+  color: $sub-text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 14px;
+}
+
+.left-button {
+  background-color: $box-color;
+  color: $box-text-color;
+  float: left;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  margin: 100px 0 0 450px;
+  padding: 5px;
+}
+
+.right-button {
+  background-color: $box-color;
+  color: $box-text-color;
+  float: right;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 16px;
+  margin: 100px 450px 0 0;
+  padding: 5px;
+}
+
+.auth-view {
+  color: $com-text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 16px;
+}
+
+.sign-up {
+  background-color: $box-color;
+  color: $text-color;
+  float: left;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  height: 280px;
+  line-height: 1.8;
+  margin: 0 0 0 300px;
+  padding: 30px;
+  width: 320px;
+}
+
+.sign-in {
+  background-color: $box-color;
+  color: $text-color;
+  float: right;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  height: 280px;
+  line-height: 1.8;
+  margin: 0 300px 0 0;
+  padding: 50px;
+  width: 320px;
+}
+
+.welcome {
+  color: $name-text-color;
+  font-family: cursive, monospace, sans-serif;
+  font-size: 50px;
+}
+
+.main-view {
+  color: $com-text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 16px;
+}
+
+button {
+  background-color: $box-color;
+  color: $box-text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 16px;
+  padding: 5px;
+}
+// $card-background-color: #fff;
+//
+// .card-body {
+//   background-color: $card-background-color;
+// }
+// .card {
+//   border-primary {
+//     mb-3 {
+//       margin: auto;
+//    }
+//   }
+// .blog-entry {
+//
+// }
 // $page-background: #000;
 // $p-color: rgba(255, 255, 255, 1);
 // $bottom-color: rgba(0, 0, 0, 1);

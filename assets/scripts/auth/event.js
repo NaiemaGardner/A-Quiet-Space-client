@@ -51,7 +51,7 @@ const onMainPage = function (event) {
   $('#authenticatedEntry').hide()
   $('#authenticatedSite').hide()
   $('#authenticatedMain').show()
-  $('.entryContainer').text('')
+  $('.card-deck').text('')
 }
 
 const onNewEntry = function (event) {
@@ -59,14 +59,26 @@ const onNewEntry = function (event) {
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()
   $('#authenticatedEntry').show()
-  $('.entryContainer').text('')
+  $('.card-deck').text('')
 }
 
 const onUpdateEntry = function (event) {
   event.preventDefault()
-  $('#authenticatedMain').hide()
-  $('#authenticatedUser').hide()
-  $('#authenticatedEntry').show()
+  $('#editEntry').show()
+}
+
+const onSignUpClick = function (event) {
+  event.preventDefault()
+  $('.auth-view').text('')
+  $('.left-button').hide()
+  $('.sign-up').show()
+}
+
+const onSignInClick = function (event) {
+  event.preventDefault()
+  $('.auth-view').text('')
+  $('.right-button').hide()
+  $('.sign-in').show()
 }
 
 module.exports = {
@@ -77,5 +89,7 @@ module.exports = {
   onNewEntry,
   onNewPassword,
   onUpdateEntry,
-  onMainPage
+  onMainPage,
+  onSignUpClick,
+  onSignInClick
 }

@@ -18,33 +18,31 @@
 
       <!-- App Intro -->
       <div id="unauthenticated">
-        <div class="info-box">
-          <p>Personalized Entries
-          <span id="info"> ~ curate your quiet</span><br />
-          <small>Create, review, edit and delete note-style entries. Publish works privately, for your eyes only, or publicly to share with the community. Use a keyword search to find entries of interest. Imagine a quiet library space, great for brain storming, idea inspiration, issue venting and general stress relief; a space built for you.</small></p>
-        </div>
-        <p id="authView"></p>
-        <form id="signUp">
-          <label>Sign Up:</label>
+          <p class="sub-title">personalized entries ~ curate your quiet</p>
+          <p class="sub-text">Create, review, edit and delete note-style entries. Imagine a library space great for brain storming and inspiration, venting and stress relief; a space built for you.</p><br />
+        <p class="auth-view"></p>
+        <button class="left-button" type="button">New User</button>
+        <button class="right-button" type="button">Returning User</button>
+        <form class="sign-up">
+          <label>Sign Up</label><br />
           <input type="text" name="credentials[name]" placeholder="Your Name">
           <input type="email" name="credentials[email]" placeholder="Your Email">
           <input type="password" name="credentials[password]" placeholder="Set Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <button type="submit">Sign Up</button>
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br />
+          <button type="submit">Create</button>
         </form>
-        <form id="signIn">
-          <label>Sign In:</label>
+        <form class="sign-in">
+          <label>Sign In</label><br />
           <input type="email" name="credentials[email]" placeholder="Your Email">
-          <input type="password" name="credentials[password]" placeholder="Your Password">
+          <input type="password" name="credentials[password]" placeholder="Your Password"><br />
           <button type="submit">Enter</button>
         </form>
       </div>
 
       <!-- Main Page -->
       <div id="authenticatedMain">
-        <h2 class="welcome">Welcome User!</h2>
-        <!-- <div class="blogEntry">USER ENTRIES GO HERE</div> -->
-        <p class="mainView"></p>
+        <h2 class="welcome"></h2>
+        <p class="main-view"></p>
         <nav id="buttonBarMain">
           <button type="button" class="userPage">My Entries</button>
           <button type="button" class="newEntry">Create New Entry</button>
@@ -62,23 +60,26 @@
       <!-- User Page -->
       <div id="authenticatedUser">
         <h2 class="welcome">User's Space</h2>
-        <p class="mainView"></p>
-        <form id="searchBarUser">
-          <label>ID Search:</label>
-          <input type="text" name="entry[:id]" placeholder="I want to find...">
-          <button type="submit" id="showEntry">Find Entry</button>
-        </form>
-        <div class="blogEntry"></div>
+        <p class="main-view"></p>
         <nav id="buttonBarUser">
-          <button type="button" class="newEntry">Create New Entry</button>
+          <button type="button" class="newEntry">New Entry</button>
           <button type="button" class="mainPage">Return to Main</button>
           <button type="button" class="signOut">Sign Out</button>
         </nav>
+        <br />
+        <div class="blog-entry"></div>
+        <form id="editEntry">
+          <label>Title:</label>
+          <input type="text" name="entry[title]" placeholder="New Title">
+          <label>Entry:</label>
+          <input type="text" name="entry[text]" placeholder="New Text..."><br />
+          <button type="submit">Save Changes</button>
+        </form>
       </div>
 
       <!-- Entry Page -->
       <div id="authenticatedEntry">
-        <p class="mainView"></p>
+        <p class="main-view"></p>
         <form id="userEntry">
           <label>Title:</label>
           <input type="text" name="entry[title]" placeholder="Your Work">
@@ -93,12 +94,7 @@
       <!-- Site Page -->
       <div id="authenticatedSite">
         <h2 class="welcome">The Works!</h2>
-        <p class="mainView"></p>
-        <!-- <form id="searchBarSite">
-          <label>Keyword Search:</label>
-          <input type="text" name="search[keyword]" placeholder="I want to find...">
-          <button type="submit">Find</button>
-        </form> -->
+        <p class="main-view"></p>
         <div id="siteEntry"></div>
         <button type="button" class="userPage">My Entries</button>
         <button type="button" class="mainPage">Return to Main</button>

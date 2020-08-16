@@ -3,33 +3,35 @@
 const store = require('../store')
 const config = require('../config')
 
-const getAllEntries = (formData) => {
+const getAllEntries = () => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
     url: config.apiUrl + '/entries',
-    method: 'GET',
-    data: formData
+    method: 'GET'
   })
 }
 
-const getMyEntries = (formData) => {
+const getMyEntries = () => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/entries/:id',
-    method: 'GET',
-    data: formData
+    url: config.apiUrl + '/users/' + store.user._id + '/entries',
+    method: 'GET'
   })
 }
 
-// const showEntry = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/entries/:id'
-//   })
-// }
+const showEntry = (entryId) => {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/entries/' + entryId,
+    method: 'GET'
+  })
+}
 
 const addEntry = (formData) => {
   return $.ajax({
@@ -62,7 +64,7 @@ const updateEntry = (formData) => {
 module.exports = {
   getAllEntries,
   getMyEntries,
-  //   // showEntry,
+  showEntry,
   addEntry,
   updateEntry
 //   // deleteEntry

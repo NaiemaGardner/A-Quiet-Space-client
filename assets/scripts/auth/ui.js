@@ -2,50 +2,60 @@
 
 const store = require('../store')
 
-const signUpSuccess = function () {
-  $('#signUp')[0].reset()
-  $('#authView').text('Sign up was successful! Now sign in.')
+const signUpSuccess = function (response) {
+  $('.sign-up')[0].reset()
+  $('.auth-view').text('Sign up was successful! Now sign in.')
+  $('.left-button').show()
+  $('.sign-up').hide()
 }
 const signUpFailure = function () {
-  $('#authView').text('Sign up attempt failed. Have you been here before? Try signing in.')
+  $('.sign-up')[0].reset()
+  $('.auth-view').text('Sign up attempt failed. Have you been here before? Try signing in.')
+  $('.left-button').show()
+  $('.sign-up').hide()
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
-  console.log(store.user)
   $('#unauthenticated').hide()
   $('#changePassword').hide()
-  $('.mainView').show()
+  $('.right-button').show()
+  $('.sign-in').hide()
+  $('.main-view').show()
   $('#authenticatedMain').show()
-  $('#signIn')[0].reset()
-  $('.mainView').text('Here you are..')
+  $('.sign-in')[0].reset()
+  $('.welcome').text('Welcome ' + store.user.name)
+  $('.main-view').text('What would you like to do?')
 }
 const signInFailure = function () {
-  $('#authView').text('Sign in attempt failed. Double check your credentials and try again.')
+  $('.sign-in')[0].reset()
+  $('.auth-view').text('Sign in attempt failed. Double check your credentials and try again.')
+  $('.right-button').show()
+  $('.sign-in').hide()
 }
 
 const changePasswordSuccess = function () {
   $('#changePassword').hide()
   $('#changePassword')[0].reset()
-  $('.mainView').text('Your password has been saved!')
+  $('.main-view').text('Your password has been saved!')
 }
 const changePasswordFailure = function () {
   $('#changePassword').hide()
-  $('.mainView').text('Could not update your password this time. Try again.')
+  $('.main-view').text('Could not update your password this time. Try again.')
 }
 
 const signOutSuccess = function () {
   $('#unauthenticated').show()
-  $('#authView').text('Signed out. Hope you had a pleasant stay, see you soon!')
-  $('.mainView').hide()
+  $('.auth-view').text('Signed out. Hope you had a pleasant stay, see you soon!')
+  $('.main-view').hide()
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()
   $('#authenticatedSite').hide()
   store.user = null
-  $('.entryContainer').text('')
+  $('.card-deck').text('')
 }
 const signOutFailure = function () {
-  $('.mainView').text('Sign out attempt failed. Try again.')
+  $('.main-view').text('Sign out attempt failed. Try again.')
 }
 
 module.exports = {

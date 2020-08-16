@@ -2,6 +2,7 @@
 
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store')
 const getFormFields = require('../../../lib/get-form-fields')
 
 // Entry Events
@@ -9,9 +10,7 @@ const onGetAllEntries = (event) => {
   event.preventDefault()
   $('#authenticatedMain').hide()
   $('#authenticatedSite').show()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.getAllEntries(formData)
+  api.getAllEntries()
     .then(ui.getAllEntriesSuccess)
     .catch(ui.failure)
 }
@@ -21,21 +20,21 @@ const onGetMyEntries = (event) => {
   $('#authenticatedMain').hide()
   $('#authenticatedEntry').hide()
   $('#authenticatedSite').hide()
-  $('.editEntry').hide()
+  $('#editEntry').hide()
   $('#authenticatedUser').show()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.getMyEntries(formData)
+  api.getMyEntries()
     .then(ui.getMyEntriesSuccess)
     .catch(ui.failure)
 }
 
-// const onShowEntry = (event) => {
-//   event.preventDefault()
-//   api.showEntry()
-//     .then(ui.showEntrySuccess)
-//     .catch(ui.failure)
-// }
+const onShowEntry = (event) => {
+  event.preventDefault()
+  const entryId = $(event.target).closest('main')
+  store.entry.id = entryId.entries._id
+  api.showEntry(store.entry.id)
+    .then(ui.showEntrySuccess)
+    .catch(ui.failure)
+}
 
 const onAddEntry = (event) => {
   event.preventDefault()
@@ -48,24 +47,26 @@ const onAddEntry = (event) => {
 
 const onUpdateEntry = (event) => {
   event.preventDefault()
-  $('.editEntry').show()
+  $('#editEntry').hide()
   const form = event.target
   const formData = getFormFields(form)
-  $('.editEntry').on('submit', api.updateEntry(formData))
+  api.updateEntry(formData)
     .then(ui.updateEntrySuccess)
     .catch(ui.failure)
 }
 
-// const onDeleteEntry = (event) => {
-//   event.preventDefault()
-//   api.deleteEntry()
-//     .then(ui.deleteEntrySuccess)
-//     .catch(ui.failure)
-// }
+const onDeleteEntry = (event) => {
+  event.preventDefault()
+  api.deleteEntry()
+    .then(ui.deleteEntrySuccess)
+    .catch(ui.failure)
+}
 
 module.exports = {
   onGetAllEntries,
   onGetMyEntries,
+  onShowEntry,
   onAddEntry,
-  onUpdateEntry
+  onUpdateEntry,
+  onDeleteEntry
 }

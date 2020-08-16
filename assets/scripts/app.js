@@ -9,7 +9,9 @@ const entryEvents = require('./entries/events')
 
 $(() => {
   // Unauthenticated View
-  $('.mainView').hide()
+  $('.sign-up').hide()
+  $('.sign-in').hide()
+  $('.main-view').hide()
   $('#authenticatedMain').hide()
   $('#authenticatedUser').hide()
   $('#authenticatedEntry').hide()
@@ -18,8 +20,8 @@ $(() => {
   // $(() => {
   //   authEvents.addHandlers()
   // })
-  $('#signUp').on('submit', authEvents.onSignUp)
-  $('#signIn').on('submit', authEvents.onSignIn)
+  $('.sign-up').on('submit', authEvents.onSignUp)
+  $('.sign-in').on('submit', authEvents.onSignIn)
   $('#changePassword').on('submit', authEvents.onChangePassword)
   $('.signOut').on('click', authEvents.onSignOut)
   // Screen Toggling
@@ -27,14 +29,17 @@ $(() => {
   $('#newPassword').on('click', authEvents.onNewPassword)
   $('#updateEntry').on('click', authEvents.onUpdateEntry)
   $('.mainPage').on('click', authEvents.onMainPage)
+  $('.left-button').on('click', authEvents.onSignUpClick)
+  $('.right-button').on('click', authEvents.onSignInClick)
   // Actions
   // $(() => {
   //   entryEvents.addHandlers()
   // })
+  $('#siteContent').on('click', entryEvents.onGetAllEntries)
   $('.userPage').on('click', entryEvents.onGetMyEntries)
   $('#userEntry').on('submit', entryEvents.onAddEntry)
-  $('#siteContent').on('click', entryEvents.onGetAllEntries)
-  $('.updateEntry').on('click', entryEvents.onUpdateEntry)
+  $('#editEntry').on('submit', entryEvents.onUpdateEntry)
+  $('.btn btn-primary show').on('click', entryEvents.onShowEntry)
   // $('#info-box').on('click', function () {
   //   $(this).toggleClass('show-description')
   // })
