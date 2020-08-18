@@ -55,17 +55,21 @@ const updateEntry = (formData) => {
   })
 }
 
-// const deleteEntry = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/entries/:id'
-//   })
-// }
+const deleteEntry = (entryId) => {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/entries/' + entryId,
+    method: 'DELETE'
+  })
+}
 
 module.exports = {
   getAllEntries,
   getMyEntries,
   showEntry,
   addEntry,
-  updateEntry
-//   // deleteEntry
+  updateEntry,
+  deleteEntry
 }

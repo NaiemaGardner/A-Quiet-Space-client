@@ -1,6 +1,7 @@
 'use strict'
 
 const showEntriesTemplate = require('../templates/blog-entry.handlebars')
+const showEntryTemplate = require('../templates/single-entry.handlebars')
 const store = require('../store')
 
 const getAllEntriesSuccess = (data) => {
@@ -12,18 +13,17 @@ const getAllEntriesSuccess = (data) => {
 const getMyEntriesSuccess = (data) => {
   store.user.entries = data.entries
   $('.welcome').text(store.user.name + '\'s Space')
-  $('.main-view').text('What will you create next')
+  $('.main-view').text('Create something new or click an entry to review.')
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('.blog-entry').append(showEntriesHtml)
 }
 
 const showEntrySuccess = (data) => {
+  store.user.entries._id = data.entry._id
   $('.blog-entry').empty()
   $('.main-view').text('Here is the entry you requested.')
-  const showEntriesHtml = showEntriesTemplate({ entries: [data.entry] })
-  console.log('----showEntriesHtml show----')
-  console.log(showEntriesHtml)
-  $('.blog-entry').append(showEntriesHtml)
+  const showEntriesHtml = showEntryTemplate({ entry: data.entry })
+  $('.single-entry').append(showEntriesHtml)
 }
 
 const addEntrySuccess = (data) => {
@@ -33,18 +33,17 @@ const addEntrySuccess = (data) => {
   $('.blog-entry').append(showEntriesHtml)
 }
 
-const updateEntrySuccess = (data) => {
-  $('.main-view').text('Your entry has been updated!')
-  const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  $('.blog-entry').append(showEntriesHtml)
-}
-
-// const deleteEntrySuccess = (data) => {
-//   $('.main-view').text('Poof! Your entry is gone.')
-//   console.log(data)
+// const updateEntrySuccess = (data) => {
+//   $('.main-view').text('Your entry has been updated!')
 //   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-//   $('.blog-entry').remove(showEntriesHtml)
+//   $('.blog-entry').append(showEntriesHtml)
 // }
+
+const deleteEntrySuccess = () => {
+  $('.main-view').text('Poof! Your entry is gone.')
+  // const showEntriesHtml = showEntryTemplate({ entry: entry })
+  $('.single-entry').empty('')
+}
 
 const failure = (error) => {
   $('.main-view').text('All fields must be filled out.')
@@ -56,7 +55,7 @@ module.exports = {
   getMyEntriesSuccess,
   showEntrySuccess,
   addEntrySuccess,
-  updateEntrySuccess,
-  // deleteEntrySuccess,
+  // updateEntrySuccess,
+  deleteEntrySuccess,
   failure
 }

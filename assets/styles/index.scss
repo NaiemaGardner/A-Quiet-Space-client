@@ -112,7 +112,7 @@ button {
   color: $text-color;
   font-family: 'Courier New', monospace, sans-serif;
   font-size: 18px;
-  height: 700px;
+  height: 660px;
   line-height: 1.8;
   margin: auto;
   padding: 50px;
@@ -125,9 +125,23 @@ button {
 }
 
 .text-input {
-  height: 500px;
+  height: 400px;
   width: 500px;
 }
+
+.title-label {
+  font-size: 20px;
+}
+
+.text-label {
+  font-size: 20px;
+}
+
+// .btn {
+//   btn-outline-danger {
+//     width: 10px;
+//   }
+// }
 // $card-background-color: #fff;
 //
 // .card-body {

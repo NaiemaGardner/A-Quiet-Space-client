@@ -63,27 +63,29 @@
         <p class="main-view"></p>
         <nav id="buttonBarUser">
           <button type="button" class="newEntry">New Entry</button>
+          <button type="button" class="editEntry">Edit Entry</button>
           <button type="button" class="mainPage">Return to Main</button>
           <button type="button" class="signOut">Sign Out</button>
         </nav>
         <br />
         <div class="blog-entry"></div>
-        <form id="editEntry">
+        <div class="single-entry"></div>
+        <!-- <form id="editEntry">
           <label>Title:</label>
           <input type="text" name="entry[title]" placeholder="New Title">
           <label>Entry:</label>
           <input type="text" name="entry[text]" placeholder="New Text..."><br />
           <button type="submit">Save Changes</button>
-        </form>
+        </form> -->
       </div>
 
       <!-- Entry Page -->
       <div id="authenticatedEntry">
         <form class="user-entry">
-          <label>Title</label><br />
+          <label class="title-label">Title</label><br />
           <input class="title-input" type="text" name="entry[title]" placeholder="your work"><br />
-          <label>Create</label><br />
-          <input class="text-input" type="text" name="entry[text]" placeholder="your way..."><br />
+          <label class="text-label">Create</label><br />
+          <textarea class="text-input" name="entry[text]" placeholder="your way..."></textarea><br />
           <button type="submit">Publish</button>
         </form><br />
         <p class="main-view"></p>

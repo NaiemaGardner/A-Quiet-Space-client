@@ -40,6 +40,7 @@ $(() => {
   $('.user-entry').on('submit', entryEvents.onAddEntry)
   $('#editEntry').on('submit', entryEvents.onUpdateEntry)
   $('.blog-entry').on('click', entryEvents.onShowEntry)
+  $('.single-entry').on('click', entryEvents.onDeleteEntry)
   // $('#info-box').on('click', function () {
   //   $(this).toggleClass('show-description')
   // })

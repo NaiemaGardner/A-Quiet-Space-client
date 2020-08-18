@@ -20,7 +20,7 @@ const onGetMyEntries = (event) => {
   $('#authenticatedMain').hide()
   $('#authenticatedEntry').hide()
   $('#authenticatedSite').hide()
-  $('#editEntry').hide()
+  $('.editEntry').hide()
   $('#authenticatedUser').show()
   api.getMyEntries()
     .then(ui.getMyEntriesSuccess)
@@ -29,6 +29,7 @@ const onGetMyEntries = (event) => {
 
 const onShowEntry = (event) => {
   event.preventDefault()
+  $('.editEntry').show()
   const entryIndex = $(event.target).closest('main').index()
   const entryId = store.user.entries[entryIndex]._id
   api.showEntry(entryId)
@@ -45,19 +46,19 @@ const onAddEntry = (event) => {
     .catch(ui.failure)
 }
 
-const onUpdateEntry = (event) => {
-  event.preventDefault()
-  $('#editEntry').hide()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.updateEntry(formData)
-    .then(ui.updateEntrySuccess)
-    .catch(ui.failure)
-}
+// const onUpdateEntry = (event) => {
+//   event.preventDefault()
+//   $('#editEntry').hide()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   api.updateEntry(formData)
+//     .then(ui.updateEntrySuccess)
+//     .catch(ui.failure)
+// }
 
 const onDeleteEntry = (event) => {
   event.preventDefault()
-  api.deleteEntry()
+  api.deleteEntry(store.user.entries._id)
     .then(ui.deleteEntrySuccess)
     .catch(ui.failure)
 }
@@ -67,6 +68,6 @@ module.exports = {
   onGetMyEntries,
   onShowEntry,
   onAddEntry,
-  onUpdateEntry,
+  // onUpdateEntry,
   onDeleteEntry
 }

@@ -13,6 +13,7 @@ const signUpFailure = function () {
   $('.auth-view').text('Sign up failed. Have you been here before? Try signing in.')
   $('.left-button').show()
   $('.sign-up').hide()
+  setTimeout(signUpFailure, 6000)
 }
 
 const signInSuccess = function (response) {
@@ -52,7 +53,7 @@ const signOutSuccess = function () {
   $('#authenticatedUser').hide()
   $('#authenticatedSite').hide()
   store.user = null
-  $('.card-deck').text('')
+  $('.blog-entry').empty()
 }
 const signOutFailure = function () {
   $('.main-view').text('Sign out attempt failed. Try again.')
