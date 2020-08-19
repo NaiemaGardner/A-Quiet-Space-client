@@ -42,30 +42,34 @@ const onSignOut = function (event) {
 // Screen Toggling
 const onNewPassword = function (event) {
   event.preventDefault()
-  $('#changePassword').show()
+  $('.change-password').show()
 }
 
 const onMainPage = function (event) {
   event.preventDefault()
-  $('#authenticatedUser').hide()
-  $('#authenticatedEntry').hide()
-  $('#authenticatedSite').hide()
-  $('#authenticatedMain').show()
+  $('#authenticated-user').hide()
+  $('#authenticated-entry').hide()
+  $('#authenticated-site').hide()
+  $('#authenticated-main').show()
+  $('#site-entry').empty()
   $('.blog-entry').empty()
 }
 
 const onNewEntry = function (event) {
   event.preventDefault()
-  $('#authenticatedMain').hide()
-  $('#authenticatedUser').hide()
-  $('#authenticatedEntry').show()
+  $('#authenticated-main').hide()
+  $('#authenticated-user').hide()
+  $('#authenticated-site').hide()
+  $('#authenticated-entry').show()
   $('.main-view').text('the happy space')
   $('.blog-entry').empty()
+  $('#site-entry').empty()
 }
 
-const onUpdateEntry = function (event) {
+const onEditEntryClick = function (event) {
   event.preventDefault()
-  $('#editEntry').show()
+  $('#authenticatedEdit').show()
+  $('.main-view').text('do over')
 }
 
 const onSignUpClick = function (event) {
@@ -89,7 +93,7 @@ module.exports = {
   onSignOut,
   onNewEntry,
   onNewPassword,
-  onUpdateEntry,
+  onEditEntryClick,
   onMainPage,
   onSignUpClick,
   onSignInClick

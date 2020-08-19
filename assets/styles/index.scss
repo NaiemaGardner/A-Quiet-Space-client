@@ -6,6 +6,7 @@ $box-color: rgba(0, 146, 164, .35);
 $box-text-color: #fff;
 $com-text-color: #005155;
 $name-text-color: rgba(0, 190, 177, .7);
+$text-shadow-color: #e6a9d2;
 
 body {
   background-attachment: fixed;
@@ -20,6 +21,7 @@ h1 {
   font-size: 80px;
   font-weight: 600px;
   padding: 50px;
+  text-shadow: 2px 2px 5px $box-text-color;
 }
 
 .sub-title {
@@ -90,6 +92,7 @@ h1 {
   color: $name-text-color;
   font-family: cursive, monospace, sans-serif;
   font-size: 50px;
+  text-shadow: 2px 2px 4px $text-shadow-color;
 }
 
 .main-view {
@@ -105,6 +108,10 @@ button {
   font-family: 'Courier New', monospace, sans-serif;
   font-size: 16px;
   padding: 5px;
+}
+
+.change-password {
+  font-family: 'Courier New', monospace, sans-serif;
 }
 
 .user-entry {

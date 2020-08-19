@@ -40,17 +40,17 @@
       </div>
 
       <!-- Main Page -->
-      <div id="authenticatedMain">
+      <div id="authenticated-main">
         <h2 class="welcome"></h2>
         <p class="main-view"></p>
-        <nav id="buttonBarMain">
-          <button type="button" class="userPage">My Entries</button>
-          <button type="button" class="newEntry">Create New Entry</button>
-          <button type="button" id="newPassword">Change Password</button>
-          <button type="button" id="siteContent">View All Entries</button>
-          <button type="button" class="signOut">Sign Out</button>
+        <nav>
+          <button type="button" class="new-entry">Create New Entry</button>
+          <button type="button" id="new-password">Change Password</button>
+          <button type="button" class="user-page">View My Entries</button>
+          <button type="button" class="site-content">View All Entries</button>
+          <button type="button" class="sign-out">Sign Out</button>
         </nav>
-        <form id="changePassword">
+        <form class="change-password">
           <input type="text" name="passwords[old]" placeholder="Old Password">
           <input type="text" name="passwords[new]" placeholder="New Password">
           <button type="submit">Change Password</button>
@@ -58,29 +58,31 @@
       </div>
 
       <!-- User Page -->
-      <div id="authenticatedUser">
+      <div id="authenticated-user">
         <h2 class="welcome"></h2>
         <p class="main-view"></p>
-        <nav id="buttonBarUser">
-          <button type="button" class="newEntry">New Entry</button>
-          <button type="button" class="editEntry">Edit Entry</button>
-          <button type="button" class="mainPage">Return to Main</button>
-          <button type="button" class="signOut">Sign Out</button>
+        <nav class="button-bar-user">
+          <button type="button" class="new-entry">New Entry</button>
+          <button type="button" class="edit-entry">Edit Entry</button>
+          <button type="button" class="return">My Entries</button>
+          <button type="button" class="main-page">Return to Main</button>
+          <button type="button" class="sign-out">Sign Out</button>
         </nav>
         <br />
         <div class="blog-entry"></div>
         <div class="single-entry"></div>
-        <!-- <form id="editEntry">
-          <label>Title:</label>
-          <input type="text" name="entry[title]" placeholder="New Title">
-          <label>Entry:</label>
-          <input type="text" name="entry[text]" placeholder="New Text..."><br />
-          <button type="submit">Save Changes</button>
-        </form> -->
+        <br />
+        <nav class="button-bar-user">
+          <button type="button" class="new-entry">New Entry</button>
+          <button type="button" class="edit-entry">Edit Entry</button>
+          <button type="button" class="return">My Entries</button>
+          <button type="button" class="main-page">Return to Main</button>
+          <button type="button" class="sign-out">Sign Out</button>
+        </nav>
       </div>
 
-      <!-- Entry Page -->
-      <div id="authenticatedEntry">
+      <!-- Create Entry Page -->
+      <div id="authenticated-entry">
         <form class="user-entry">
           <label class="title-label">Title</label><br />
           <input class="title-input" type="text" name="entry[title]" placeholder="your work"><br />
@@ -89,20 +91,47 @@
           <button type="submit">Publish</button>
         </form><br />
         <p class="main-view"></p>
-        <button type="button" class="userPage">My Entries</button>
-        <button type="button" class="mainPage">Return to Main</button>
-        <button type="button" id="siteContent">View All Entries</button>
-        <button type="button" class="signOut">Sign Out</button>
+        <button type="button" class="user-page">My Entries</button>
+        <button type="button" class="site-content">All Entries</button>
+        <button type="button" class="main-page">Return to Main</button>
+        <button type="button" class="sign-out">Sign Out</button>
+      </div>
+
+      <!-- Edit Entry Page -->
+      <div id="authenticatedEdit">
+        <form class="edit-entry">
+          <label class="title-label">Title</label><br />
+          <input class="title-input" type="text" name="entry[title]" placeholder="your work"><br />
+          <label class="text-label">Update</label><br />
+          <textarea class="text-input" name="entry[text]" placeholder="your way..."></textarea><br />
+          <button type="submit">Update</button>
+        </form><br />
+        <p class="main-view"></p>
+        <button type="button" class="user-page">My Entries</button>
+        <button type="button" class="site-content">All Entries</button>
+        <button type="button" class="main-page">Return to Main</button>
+        <button type="button" class="sign-out">Sign Out</button>
       </div>
 
       <!-- Site Page -->
-      <div id="authenticatedSite">
-        <h2 class="welcome">The Works!</h2>
+      <div id="authenticated-site">
+        <h2 class="welcome"></h2>
         <p class="main-view"></p>
-        <div id="siteEntry"></div>
-        <button type="button" class="userPage">My Entries</button>
-        <button type="button" class="mainPage">Return to Main</button>
-        <button type="button" class="signOut">Sign Out</button>
+        <nav class="button-bar-site">
+          <button type="button" class="new-entry">Create Entry</button>
+          <button type="button" class="user-page">My Entries</button>
+          <button type="button" class="main-page">Return to Main</button>
+          <button type="button" class="sign-out">Sign Out</button>
+        </nav>
+        <br />
+        <div id="site-entry"></div>
+        <br />
+        <nav class="button-bar-site">
+          <button type="button" class="new-entry">Create Entry</button>
+          <button type="button" class="user-page">My Entries</button>
+          <button type="button" class="main-page">Return to Main</button>
+          <button type="button" class="sign-out">Sign Out</button>
+        </nav>
       </div>
     </body>
 </html>

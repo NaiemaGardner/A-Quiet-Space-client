@@ -13,17 +13,16 @@ const signUpFailure = function () {
   $('.auth-view').text('Sign up failed. Have you been here before? Try signing in.')
   $('.left-button').show()
   $('.sign-up').hide()
-  setTimeout(signUpFailure, 6000)
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
   $('#unauthenticated').hide()
-  $('#changePassword').hide()
+  $('.change-password').hide()
   $('.right-button').show()
   $('.sign-in').hide()
   $('.main-view').show()
-  $('#authenticatedMain').show()
+  $('#authenticated-main').show()
   $('.sign-in')[0].reset()
   $('.welcome').text('Welcome ' + store.user.name)
   $('.main-view').text('What would you like to do?')
@@ -36,22 +35,23 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('#changePassword').hide()
-  $('#changePassword')[0].reset()
+  $('.change-password').hide()
+  $('.change-password')[0].reset()
   $('.main-view').text('Your password has been saved!')
 }
 const changePasswordFailure = function () {
-  $('#changePassword').hide()
-  $('.main-view').text('Could not update your password this time. Try again.')
+  $('.change-password').hide()
+  $('.main-view').text('All fields must be filled out.')
 }
 
 const signOutSuccess = function () {
   $('#unauthenticated').show()
   $('.auth-view').text('Hope you had a pleasant stay, see you soon!')
   $('.main-view').hide()
-  $('#authenticatedMain').hide()
-  $('#authenticatedUser').hide()
-  $('#authenticatedSite').hide()
+  $('#authenticated-main').hide()
+  $('#authenticated-user').hide()
+  $('#authenticated-site').hide()
+  $('#authenticated-entry').hide()
   store.user = null
   $('.blog-entry').empty()
 }

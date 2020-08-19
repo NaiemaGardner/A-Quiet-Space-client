@@ -44,12 +44,12 @@ const addEntry = (formData) => {
   })
 }
 
-const updateEntry = (formData) => {
+const updateEntry = (formData, entryId) => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/entries/:id',
+    url: config.apiUrl + '/entries/' + entryId,
     method: 'PATCH',
     data: formData
   })

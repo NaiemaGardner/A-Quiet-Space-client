@@ -8,8 +8,8 @@ const getFormFields = require('../../../lib/get-form-fields')
 // Entry Events
 const onGetAllEntries = (event) => {
   event.preventDefault()
-  $('#authenticatedMain').hide()
-  $('#authenticatedSite').show()
+  $('#authenticated-main').hide()
+  $('#authenticated-site').show()
   api.getAllEntries()
     .then(ui.getAllEntriesSuccess)
     .catch(ui.failure)
@@ -17,11 +17,11 @@ const onGetAllEntries = (event) => {
 
 const onGetMyEntries = (event) => {
   event.preventDefault()
-  $('#authenticatedMain').hide()
-  $('#authenticatedEntry').hide()
-  $('#authenticatedSite').hide()
-  $('.editEntry').hide()
-  $('#authenticatedUser').show()
+  $('#authenticated-main').hide()
+  $('#authenticated-entry').hide()
+  $('#authenticated-site').hide()
+  $('.edit-entry').hide()
+  $('#authenticated-user').show()
   api.getMyEntries()
     .then(ui.getMyEntriesSuccess)
     .catch(ui.failure)
@@ -29,7 +29,7 @@ const onGetMyEntries = (event) => {
 
 const onShowEntry = (event) => {
   event.preventDefault()
-  $('.editEntry').show()
+  $('.edit-entry').show()
   const entryIndex = $(event.target).closest('main').index()
   const entryId = store.user.entries[entryIndex]._id
   api.showEntry(entryId)
@@ -46,15 +46,14 @@ const onAddEntry = (event) => {
     .catch(ui.failure)
 }
 
-// const onUpdateEntry = (event) => {
-//   event.preventDefault()
-//   $('#editEntry').hide()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   api.updateEntry(formData)
-//     .then(ui.updateEntrySuccess)
-//     .catch(ui.failure)
-// }
+const onUpdateEntry = (event) => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateEntry(formData, store.user.entries._id)
+    .then(ui.updateEntrySuccess)
+    .catch(ui.failure)
+}
 
 const onDeleteEntry = (event) => {
   event.preventDefault()
@@ -68,6 +67,6 @@ module.exports = {
   onGetMyEntries,
   onShowEntry,
   onAddEntry,
-  // onUpdateEntry,
+  onUpdateEntry,
   onDeleteEntry
 }
