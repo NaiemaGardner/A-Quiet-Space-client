@@ -5,18 +5,18 @@ const showEntryTemplate = require('../templates/single-entry.handlebars')
 const store = require('../store')
 
 const getAllEntriesSuccess = (data) => {
+  console.log('----getall data----')
+  console.log(data)
   const array = Object.values(data.entries)
   if (array.length < 5) {
     $('.button-bar-bottom-site').hide()
   }
-  $('.welcome').text('The Collective')
+  $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('#site-entry').append(showEntriesHtml)
   $('#authenticated-entry').hide()
   $('#authenticated-edit').hide()
-  console.log('---all entries IDs---')
-  console.log(data)
 }
 
 const getMyEntriesSuccess = (data) => {
