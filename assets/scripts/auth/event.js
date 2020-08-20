@@ -83,6 +83,7 @@ const onNewEntry = (event) => {
   $('#authenticated-main').hide()
   $('#authenticated-user').hide()
   $('#authenticated-site').hide()
+  $('.change-password').hide()
   $('#authenticated-entry').show()
   $('.main-view').text('the happy space')
   $('.blog-entry').empty()
