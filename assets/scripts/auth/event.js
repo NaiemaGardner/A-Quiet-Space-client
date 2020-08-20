@@ -73,6 +73,7 @@ const onMainPage = (event) => {
   $('#authenticated-main').show()
   $('#authenticated-edit').hide()
   $('.welcome').text(store.user.name + '\'s Space')
+  $('.main-view').text('What would you like to do?')
   $('.blog-entry').empty()
   $('.site-entry').empty()
 }

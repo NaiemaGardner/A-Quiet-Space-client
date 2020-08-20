@@ -47,7 +47,7 @@ const changePasswordFailure = function () {
 const signOutSuccess = () => {
   $('#unauthenticated').show()
   $('.auth-view').text('Hope you had a pleasant stay, see you soon!')
-  $('.main-view').hide()
+  // $('.main-view').hide()
   $('#authenticated-main').hide()
   $('#authenticated-user').hide()
   $('#authenticated-site').hide()

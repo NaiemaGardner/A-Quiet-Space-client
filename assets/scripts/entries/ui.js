@@ -17,9 +17,11 @@ const getAllEntriesSuccess = (data) => {
   $('.site-entry').append(showEntriesHtml)
   $('#authenticated-entry').hide()
   $('#authenticated-edit').hide()
+  $('.change-password').hide()
 }
 
 const getMyEntriesSuccess = (data) => {
+  $('.blog-entry').empty()
   store.user.entries = data.entries
   if (data.entries.length < 5) {
     $('.button-bar-bottom-user').hide()
@@ -36,7 +38,9 @@ const getMyEntriesSuccess = (data) => {
   $('.blog-entry').append(showEntriesHtml)
   $('.return').hide()
   $('#authenticated-edit').hide()
+  $('.change-password').hide()
   $('.single-entry').empty()
+  $('.site-entry').empty()
 }
 
 const showEntrySuccess = (data) => {
@@ -53,8 +57,8 @@ const addEntrySuccess = (data) => {
   store.entry = data.entry
   $('.main-view').text('Success! Check out your collection to view the new entry.')
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  $('.blog-entry').append(showEntriesHtml)
   $('.site-entry').append(showEntriesHtml)
+  $('.blog-entry').append(showEntriesHtml)
   $('.user-entry')[0].reset()
 }
 
