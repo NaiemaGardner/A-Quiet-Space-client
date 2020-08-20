@@ -14,7 +14,7 @@ const getAllEntriesSuccess = (data) => {
   $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  $('#site-entry').append(showEntriesHtml)
+  $('.blog-entry').append(showEntriesHtml)
   $('#authenticated-entry').hide()
   $('#authenticated-edit').hide()
 }
