@@ -52,6 +52,7 @@ const signOutSuccess = function () {
   $('#authenticated-user').hide()
   $('#authenticated-site').hide()
   $('#authenticated-entry').hide()
+  $('#authenticated-edit').hide()
   store.user = null
   $('.blog-entry').empty()
 }

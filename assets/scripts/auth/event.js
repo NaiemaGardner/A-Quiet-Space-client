@@ -51,6 +51,7 @@ const onMainPage = function (event) {
   $('#authenticated-entry').hide()
   $('#authenticated-site').hide()
   $('#authenticated-main').show()
+  $('#authenticated-edit').hide()
   $('#site-entry').empty()
   $('.blog-entry').empty()
 }
@@ -68,7 +69,8 @@ const onNewEntry = function (event) {
 
 const onEditEntryClick = function (event) {
   event.preventDefault()
-  $('#authenticatedEdit').show()
+  $('#authenticated-user').hide()
+  $('#authenticated-edit').show()
   $('.main-view').text('do over')
 }
 
@@ -86,6 +88,11 @@ const onSignInClick = function (event) {
   $('.sign-in').show()
 }
 
+const onClose = (event) => {
+  event.preventDefault()
+  $('.change-password').hide()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -96,5 +103,6 @@ module.exports = {
   onEditEntryClick,
   onMainPage,
   onSignUpClick,
-  onSignInClick
+  onSignInClick,
+  onClose
 }

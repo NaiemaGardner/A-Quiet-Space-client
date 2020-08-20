@@ -50,10 +50,14 @@
           <button type="button" class="site-content">View All Entries</button>
           <button type="button" class="sign-out">Sign Out</button>
         </nav>
+        <br />
+        <br />
+        <br />
         <form class="change-password">
           <input type="text" name="passwords[old]" placeholder="Old Password">
           <input type="text" name="passwords[new]" placeholder="New Password">
           <button type="submit">Change Password</button>
+          <button id="close" type="button">Close</button>
         </form>
       </div>
 
@@ -72,7 +76,7 @@
         <div class="blog-entry"></div>
         <div class="single-entry"></div>
         <br />
-        <nav class="button-bar-user">
+        <nav class="button-bar-bottom-user">
           <button type="button" class="new-entry">New Entry</button>
           <button type="button" class="edit-entry">Edit Entry</button>
           <button type="button" class="return">My Entries</button>
@@ -98,8 +102,8 @@
       </div>
 
       <!-- Edit Entry Page -->
-      <div id="authenticatedEdit">
-        <form class="edit-entry">
+      <div id="authenticated-edit">
+        <form class="new-edit">
           <label class="title-label">Title</label><br />
           <input class="title-input" type="text" name="entry[title]" placeholder="your work"><br />
           <label class="text-label">Update</label><br />
@@ -126,7 +130,7 @@
         <br />
         <div id="site-entry"></div>
         <br />
-        <nav class="button-bar-site">
+        <nav class="button-bar-bottom-site">
           <button type="button" class="new-entry">Create Entry</button>
           <button type="button" class="user-page">My Entries</button>
           <button type="button" class="main-page">Return to Main</button>

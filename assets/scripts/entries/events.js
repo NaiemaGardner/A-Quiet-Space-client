@@ -49,7 +49,13 @@ const onAddEntry = (event) => {
 const onUpdateEntry = (event) => {
   event.preventDefault()
   const form = event.target
+  console.log('----update form-----')
+  console.log(form)
   const formData = getFormFields(form)
+  console.log('----update form data-----')
+  console.log(formData)
+  console.log('----update store.user.entries._id-----')
+  console.log(store.user.entries._id)
   api.updateEntry(formData, store.user.entries._id)
     .then(ui.updateEntrySuccess)
     .catch(ui.failure)

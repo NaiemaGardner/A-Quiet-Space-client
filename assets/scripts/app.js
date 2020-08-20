@@ -15,7 +15,7 @@ $(() => {
   $('#authenticated-main').hide()
   $('#authenticated-user').hide()
   $('#authenticated-entry').hide()
-  $('#authenticatedEdit').hide()
+  $('#authenticated-edit').hide()
   $('#authenticated-site').hide()
   // Authentication
   // $(() => {
@@ -34,6 +34,7 @@ $(() => {
   $('.right-button').on('click', authEvents.onSignInClick)
   $('.edit-entry').on('click', authEvents.onEditEntryClick)
   $('.return').on('click', entryEvents.onGetMyEntries)
+  $('#close').on('click', authEvents.onClose)
   // Actions
   // $(() => {
   //   entryEvents.addHandlers()
@@ -41,7 +42,7 @@ $(() => {
   $('.site-content').on('click', entryEvents.onGetAllEntries)
   $('.user-page').on('click', entryEvents.onGetMyEntries)
   $('.user-entry').on('submit', entryEvents.onAddEntry)
-  $('.edit-entry').on('submit', entryEvents.onUpdateEntry)
+  $('.new-edit').on('submit', entryEvents.onUpdateEntry)
   $('.blog-entry').on('click', entryEvents.onShowEntry)
   $('.single-entry').on('click', entryEvents.onDeleteEntry)
   // $('#info-box').on('click', function () {
