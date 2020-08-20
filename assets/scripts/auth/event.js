@@ -2,10 +2,19 @@
 
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 const getFormFields = require('../../../lib/get-form-fields')
 
-// Auth Events
-const onSignUp = function (event) {
+// Authentication Handlers
+const authHandlers = (event) => {
+  $('.sign-up').on('submit', onSignUp)
+  $('.sign-in').on('submit', onSignIn)
+  $('.change-password').on('submit', onChangePassword)
+  $('.sign-out').on('click', onSignOut)
+}
+
+// Authentication Events
+const onSignUp = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -14,7 +23,7 @@ const onSignUp = function (event) {
     .catch(ui.signUpFailure)
 }
 
-const onSignIn = function (event) {
+const onSignIn = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -23,7 +32,7 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-const onChangePassword = function (event) {
+const onChangePassword = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -32,31 +41,43 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-const onSignOut = function (event) {
+const onSignOut = (event) => {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
 
-// Screen Toggling
-const onNewPassword = function (event) {
+// Toggle Handlers
+const toggleHandlers = (event) => {
+  $('.new-entry').on('click', onNewEntry)
+  $('#new-password').on('click', onNewPassword)
+  $('.main-page').on('click', onMainPage)
+  $('.left-button').on('click', onSignUpClick)
+  $('.right-button').on('click', onSignInClick)
+  $('.edit-entry').on('click', onEditEntryClick)
+  $('#close').on('click', onClose)
+}
+
+// Toggle Events
+const onNewPassword = (event) => {
   event.preventDefault()
   $('.change-password').show()
 }
 
-const onMainPage = function (event) {
+const onMainPage = (event) => {
   event.preventDefault()
   $('#authenticated-user').hide()
   $('#authenticated-entry').hide()
   $('#authenticated-site').hide()
   $('#authenticated-main').show()
   $('#authenticated-edit').hide()
+  $('.welcome').text(store.user.name + '\'s Space')
   $('#site-entry').empty()
   $('.blog-entry').empty()
 }
 
-const onNewEntry = function (event) {
+const onNewEntry = (event) => {
   event.preventDefault()
   $('#authenticated-main').hide()
   $('#authenticated-user').hide()
@@ -67,21 +88,21 @@ const onNewEntry = function (event) {
   $('#site-entry').empty()
 }
 
-const onEditEntryClick = function (event) {
+const onEditEntryClick = (event) => {
   event.preventDefault()
   $('#authenticated-user').hide()
   $('#authenticated-edit').show()
   $('.main-view').text('do over')
 }
 
-const onSignUpClick = function (event) {
+const onSignUpClick = (event) => {
   event.preventDefault()
   $('.auth-view').text('')
   $('.left-button').hide()
   $('.sign-up').show()
 }
 
-const onSignInClick = function (event) {
+const onSignInClick = (event) => {
   event.preventDefault()
   $('.auth-view').text('')
   $('.right-button').hide()
@@ -94,6 +115,8 @@ const onClose = (event) => {
 }
 
 module.exports = {
+  authHandlers,
+  toggleHandlers,
   onSignUp,
   onSignIn,
   onChangePassword,

@@ -5,6 +5,17 @@ const ui = require('./ui.js')
 const store = require('../store')
 const getFormFields = require('../../../lib/get-form-fields')
 
+// Entry Handlers
+const entryHandlers = (event) => {
+  $('.site-content').on('click', onGetAllEntries)
+  $('.user-page').on('click', onGetMyEntries)
+  $('.return').on('click', onGetMyEntries)
+  $('.user-entry').on('submit', onAddEntry)
+  $('.new-edit').on('submit', onUpdateEntry)
+  $('.blog-entry').on('click', onShowEntry)
+  $('.single-entry').on('click', onDeleteEntry)
+}
+
 // Entry Events
 const onGetAllEntries = (event) => {
   event.preventDefault()
@@ -63,6 +74,7 @@ const onDeleteEntry = (event) => {
 }
 
 module.exports = {
+  entryHandlers,
   onGetAllEntries,
   onGetMyEntries,
   onShowEntry,

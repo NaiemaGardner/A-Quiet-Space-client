@@ -34,6 +34,7 @@ h1 {
   color: $sub-text-color;
   font-family: 'Courier New', monospace, sans-serif;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .left-button {
@@ -91,7 +92,7 @@ h1 {
 .welcome {
   color: $name-text-color;
   font-family: cursive, monospace, sans-serif;
-  font-size: 50px;
+  font-size: 55px;
   text-shadow: 2px 2px 4px $text-shadow-color;
 }
 

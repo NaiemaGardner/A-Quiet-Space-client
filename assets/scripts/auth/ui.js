@@ -2,20 +2,20 @@
 
 const store = require('../store')
 
-const signUpSuccess = function (response) {
+const signUpSuccess = (response) => {
   $('.sign-up')[0].reset()
   $('.auth-view').text('Sign up success! Now sign in.')
   $('.left-button').show()
   $('.sign-up').hide()
 }
-const signUpFailure = function () {
+const signUpFailure = () => {
   $('.sign-up')[0].reset()
   $('.auth-view').text('Sign up failed. Have you been here before? Try signing in.')
   $('.left-button').show()
   $('.sign-up').hide()
 }
 
-const signInSuccess = function (response) {
+const signInSuccess = (response) => {
   store.user = response.user
   $('#unauthenticated').hide()
   $('.change-password').hide()
@@ -27,24 +27,24 @@ const signInSuccess = function (response) {
   $('.welcome').text('Welcome ' + store.user.name)
   $('.main-view').text('What would you like to do?')
 }
-const signInFailure = function () {
+const signInFailure = () => {
   $('.sign-in')[0].reset()
   $('.auth-view').text('Sign in failed. Check your credentials and try again.')
   $('.right-button').show()
   $('.sign-in').hide()
 }
 
-const changePasswordSuccess = function () {
+const changePasswordSuccess = () => {
   $('.change-password').hide()
   $('.change-password')[0].reset()
   $('.main-view').text('Your password has been saved!')
 }
 const changePasswordFailure = function () {
   $('.change-password').hide()
-  $('.main-view').text('All fields must be filled out.')
+  $('.main-view').text('Couldn\'t change your password this time. Try again.')
 }
 
-const signOutSuccess = function () {
+const signOutSuccess = () => {
   $('#unauthenticated').show()
   $('.auth-view').text('Hope you had a pleasant stay, see you soon!')
   $('.main-view').hide()
@@ -55,8 +55,9 @@ const signOutSuccess = function () {
   $('#authenticated-edit').hide()
   store.user = null
   $('.blog-entry').empty()
+  $('#site-entry').empty()
 }
-const signOutFailure = function () {
+const signOutFailure = () => {
   $('.main-view').text('Sign out attempt failed. Try again.')
 }
 
