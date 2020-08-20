@@ -14,7 +14,7 @@ const getAllEntriesSuccess = (data) => {
   $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  $('.blog-entry').append(showEntriesHtml)
+  $('.site-entry').append(showEntriesHtml)
   $('#authenticated-entry').hide()
   $('#authenticated-edit').hide()
 }
@@ -54,6 +54,7 @@ const addEntrySuccess = (data) => {
   $('.main-view').text('Success! Check out your collection to view the new entry.')
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('.blog-entry').append(showEntriesHtml)
+  $('.site-entry').append(showEntriesHtml)
   $('.user-entry')[0].reset()
 }
 

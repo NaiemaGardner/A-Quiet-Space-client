@@ -74,6 +74,7 @@ const onMainPage = (event) => {
   $('#authenticated-edit').hide()
   $('.welcome').text(store.user.name + '\'s Space')
   $('.blog-entry').empty()
+  $('.site-entry').empty()
 }
 
 const onNewEntry = (event) => {
@@ -84,6 +85,7 @@ const onNewEntry = (event) => {
   $('#authenticated-entry').show()
   $('.main-view').text('the happy space')
   $('.blog-entry').empty()
+  $('.site-entry').empty()
 }
 
 const onEditEntryClick = (event) => {
