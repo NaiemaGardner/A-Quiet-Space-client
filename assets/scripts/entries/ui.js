@@ -15,6 +15,8 @@ const getAllEntriesSuccess = (data) => {
   $('#site-entry').append(showEntriesHtml)
   $('#authenticated-entry').hide()
   $('#authenticated-edit').hide()
+  console.log('---all entries IDs---')
+  console.log(data)
 }
 
 const getMyEntriesSuccess = (data) => {
@@ -50,8 +52,6 @@ const addEntrySuccess = (data) => {
 }
 
 const updateEntrySuccess = (data) => {
-  console.log('----update data-----')
-  console.log(data)
   $('.new-edit').hide()
   $('.main-view').text('Your entry has been updated!')
 }
