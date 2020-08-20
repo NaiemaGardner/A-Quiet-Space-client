@@ -94,6 +94,7 @@ const onEditEntryClick = (event) => {
   event.preventDefault()
   $('#authenticated-user').hide()
   $('#authenticated-edit').show()
+  $('.new-edit').show()
   $('.main-view').text('do over')
 }
 

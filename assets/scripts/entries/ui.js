@@ -69,6 +69,7 @@ const updateEntrySuccess = (data) => {
 
 const deleteEntrySuccess = () => {
   $('.main-view').text('Poof! Your entry is gone.')
+  $('.edit-entry').hide()
   $('.single-entry').empty('')
 }
 
