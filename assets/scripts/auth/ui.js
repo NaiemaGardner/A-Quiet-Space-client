@@ -56,6 +56,8 @@ const signOutSuccess = () => {
   store.user = null
   $('.blog-entry').empty()
   $('.site-entry').empty()
+  $('.user-entry')[0].reset()
+  $('.new-edit')[0].reset()
 }
 const signOutFailure = () => {
   $('.main-view').text('Sign out attempt failed. Try again.')

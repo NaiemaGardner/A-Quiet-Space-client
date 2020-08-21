@@ -58,11 +58,12 @@ const addEntrySuccess = (data) => {
   $('.main-view').text('Success! Check out your collection to view the new entry.')
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('.site-entry').append(showEntriesHtml)
-  // $('.blog-entry').append(showEntriesHtml)
+  $('.blog-entry').append(showEntriesHtml)
   $('.user-entry')[0].reset()
 }
 
 const updateEntrySuccess = (data) => {
+  $('.new-edit')[0].reset()
   $('.new-edit').hide()
   $('.main-view').text('Now check out your collection!')
 }
