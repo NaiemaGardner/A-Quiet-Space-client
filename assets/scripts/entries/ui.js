@@ -5,8 +5,6 @@ const showEntryTemplate = require('../templates/single-entry.handlebars')
 const store = require('../store')
 
 const getAllEntriesSuccess = (data) => {
-  console.log('---get all data---')
-  console.log(data)
   $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
   const array = Object.values(data.entries)
@@ -16,8 +14,6 @@ const getAllEntriesSuccess = (data) => {
     $('.button-bar-bottom-site').show()
   }
   const list = array.sort()
-  console.log('---list get all----')
-  console.log(list)
   const showEntriesHtml = showEntriesTemplate({ entries: list })
   $('.site-entry').append(showEntriesHtml)
   $('#authenticated-entry').hide()
