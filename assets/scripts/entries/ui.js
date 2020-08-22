@@ -15,7 +15,7 @@ const getAllEntriesSuccess = (data) => {
   } else {
     $('.button-bar-bottom-site').show()
   }
-  const list = array.sort(data.entries.createdAt)
+  const list = array.sort()
   console.log('---list get all----')
   console.log(list)
   const showEntriesHtml = showEntriesTemplate({ entries: list })
