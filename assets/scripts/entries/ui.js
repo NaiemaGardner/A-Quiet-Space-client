@@ -5,6 +5,9 @@ const showEntryTemplate = require('../templates/single-entry.handlebars')
 const store = require('../store')
 
 const getAllEntriesSuccess = (data) => {
+  $('#authenticated-entry').hide()
+  $('#authenticated-edit').hide()
+  $('.change-password').hide()
   $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
   const array = Object.values(data.entries)
@@ -13,15 +16,17 @@ const getAllEntriesSuccess = (data) => {
   } else {
     $('.button-bar-bottom-site').show()
   }
-  const list = array.sort()
-  const showEntriesHtml = showEntriesTemplate({ entries: list })
+  const orderedList = array.sort((a, b) => a - b)
+  const showEntriesHtml = showEntriesTemplate({ entries: orderedList })
   $('.site-entry').append(showEntriesHtml)
-  $('#authenticated-entry').hide()
-  $('#authenticated-edit').hide()
-  $('.change-password').hide()
 }
 
 const getMyEntriesSuccess = (data) => {
+  $('.return').hide()
+  $('#authenticated-edit').hide()
+  $('.change-password').hide()
+  $('.single-entry').empty()
+  $('.site-entry').empty()
   $('.blog-entry').empty()
   store.user.entries = data.entries
   if (data.entries.length < 5) {
@@ -37,21 +42,16 @@ const getMyEntriesSuccess = (data) => {
   }
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('.blog-entry').append(showEntriesHtml)
-  $('.return').hide()
-  $('#authenticated-edit').hide()
-  $('.change-password').hide()
-  $('.single-entry').empty()
-  $('.site-entry').empty()
 }
 
 const showEntrySuccess = (data) => {
   store.user.entries._id = data.entry._id
   $('.button-bar-bottom-user').hide()
   $('.blog-entry').empty()
+  $('.return').show()
   $('.main-view').text('Here is the entry you requested.')
   const showEntriesHtml = showEntryTemplate({ entry: data.entry })
   $('.single-entry').append(showEntriesHtml)
-  $('.return').show()
 }
 
 const addEntrySuccess = (data) => {
@@ -64,15 +64,15 @@ const addEntrySuccess = (data) => {
 }
 
 const updateEntrySuccess = (data) => {
-  $('.new-edit')[0].reset()
   $('.new-edit').hide()
   $('.main-view').text('Now check out your collection!')
+  $('.new-edit')[0].reset()
 }
 
 const deleteEntrySuccess = () => {
-  $('.main-view').text('Poof! Your entry is gone.')
   $('.edit-entry').hide()
   $('.single-entry').empty('')
+  $('.main-view').text('Poof! Your entry is gone.')
 }
 
 const failure = (error) => {
