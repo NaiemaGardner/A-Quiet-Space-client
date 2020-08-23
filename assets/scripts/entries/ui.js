@@ -10,13 +10,13 @@ const getAllEntriesSuccess = (data) => {
   $('.change-password').hide()
   $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
-  const array = Object.values(data.entries)
+  const array = data.entries
   if (array.length < 5) {
     $('.button-bar-bottom-site').hide()
   } else {
     $('.button-bar-bottom-site').show()
   }
-  const orderedList = array.sort((a, b) => a - b)
+  const orderedList = array.sort((a, b) => a.createdAt - b.createdAt)
   const showEntriesHtml = showEntriesTemplate({ entries: orderedList })
   $('.site-entry').append(showEntriesHtml)
 }
@@ -40,7 +40,7 @@ const getMyEntriesSuccess = (data) => {
   } else {
     $('.main-view').text('Create something new or select an entry to review.')
   }
-  const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
+  const showEntriesHtml = showEntriesTemplate({ entries: store.user.entries })
   $('.blog-entry').append(showEntriesHtml)
 }
 
