@@ -57,9 +57,9 @@ const showEntrySuccess = (data) => {
 const addEntrySuccess = (data) => {
   store.entry = data.entry
   $('.main-view').text('Success! Check out your collection to view the new entry.')
-  const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  $('.site-entry').append(showEntriesHtml)
-  $('.blog-entry').append(showEntriesHtml)
+  // const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
+  // $('.site-entry').append(showEntriesHtml)
+  // $('.blog-entry').append(showEntriesHtml)
   $('.user-entry')[0].reset()
 }
 
