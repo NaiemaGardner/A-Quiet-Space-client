@@ -10,19 +10,13 @@ const getAllEntriesSuccess = (data) => {
   $('.change-password').hide()
   $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
-  console.log('----data----')
-  console.log(data)
   const array = data.entries
-  console.log('----array----')
-  console.log(array)
   if (array.length < 5) {
     $('.button-bar-bottom-site').hide()
   } else {
     $('.button-bar-bottom-site').show()
   }
   const orderedList = array.sort((a, b) => a.createdAt - b.createdAt)
-  console.log('----orderedList----')
-  console.log(orderedList)
   const showEntriesHtml = showEntriesTemplate({ entries: orderedList })
   $('.site-entry').append(showEntriesHtml)
 }
