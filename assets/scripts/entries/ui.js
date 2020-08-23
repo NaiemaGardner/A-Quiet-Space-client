@@ -11,11 +11,11 @@ const getAllEntriesSuccess = (data) => {
   $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
   // const array = data.entries
-  if (data.entries.length < 5) {
-    $('.button-bar-bottom-site').hide()
-  } else {
-    $('.button-bar-bottom-site').show()
-  }
+  // if (data.entries.length < 5) {
+  //   $('.button-bar-bottom-site').hide()
+  // } else {
+  //   $('.button-bar-bottom-site').show()
+  // }
   // const orderedList = array.sort((a, b) => a.createdAt - b.createdAt)
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('.site-entry').append(showEntriesHtml)
