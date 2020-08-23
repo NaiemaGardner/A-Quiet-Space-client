@@ -10,14 +10,14 @@ const getAllEntriesSuccess = (data) => {
   $('.change-password').hide()
   $('.welcome').text('The Collection')
   $('.main-view').text('Live, create, imagine.')
-  const array = data.entries
-  if (array.length < 5) {
+  // const array = data.entries
+  if (data.entries.length < 5) {
     $('.button-bar-bottom-site').hide()
   } else {
     $('.button-bar-bottom-site').show()
   }
-  const orderedList = array.sort((a, b) => a.createdAt - b.createdAt)
-  const showEntriesHtml = showEntriesTemplate({ entries: orderedList })
+  // const orderedList = array.sort((a, b) => a.createdAt - b.createdAt)
+  const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('.site-entry').append(showEntriesHtml)
 }
 
