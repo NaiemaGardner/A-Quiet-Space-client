@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>A Quiet Space</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <h1>A Quiet Space</h1>
+      </header>
+
+      <!-- App Load Page -->
+      <div id="unauthenticated">
+          <p class="sub-title">personalized entries ~ curate your quiet</p>
+          <p class="sub-text">Create, review, edit and delete blog-style entries. Imagine a library space great for brain storming and inspiration, venting and stress relief; a space built for you.</p><br />
+        <p class="auth-view"></p>
+        <button class="left-button" type="button">New User</button>
+        <button class="right-button" type="button">Returning User</button>
+        <form class="sign-up">
+          <label>Sign Up</label><br />
+          <input type="text" name="credentials[name]" placeholder="Your Name">
+          <input type="email" name="credentials[email]" placeholder="Your Email">
+          <input type="password" name="credentials[password]" placeholder="Set Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br />
+          <button type="submit">Create</button>
+        </form>
+        <form class="sign-in">
+          <label>Sign In</label><br />
+          <input type="email" name="credentials[email]" placeholder="Your Email">
+          <input type="password" name="credentials[password]" placeholder="Your Password"><br />
+          <button type="submit">Enter</button>
+        </form>
+      </div>
+
+      <!-- Main Page -->
+      <div id="authenticated-main">
+        <h2 class="welcome"></h2>
+        <p class="main-view"></p>
+        <br />
+        <nav>
+          <button type="button" class="new-entry">Create New Entry</button>
+          <button type="button" id="new-password">Change Password</button>
+          <button type="button" class="user-page">View My Entries</button>
+          <button type="button" class="site-content">View All Entries</button>
+          <button type="button" class="sign-out">Sign Out</button>
+        </nav>
+        <br />
+        <form class="change-password">
+          <input type="text" name="passwords[old]" placeholder="Old Password">
+          <input type="text" name="passwords[new]" placeholder="New Password">
+          <button type="submit">Change Password</button>
+          <button id="close" type="button">Close</button>
+        </form>
+      </div>
+
+      <!-- User Page -->
+      <div id="authenticated-user">
+        <h2 class="welcome"></h2>
+        <p class="main-view"></p>
+        <nav class="button-bar-user">
+          <button type="button" class="edit-entry">Edit Entry</button>
+          <button type="button" class="new-entry">New Entry</button>
+          <button type="button" class="return">My Entries</button>
+          <button type="button" class="main-page">Return to Main</button>
+          <button type="button" class="sign-out">Sign Out</button>
+        </nav>
+        <br />
+        <div class="blog-entry"></div>
+        <div class="single-entry"></div>
+        <br />
+        <nav class="button-bar-bottom-user">
+          <button type="button" class="edit-entry">Edit Entry</button>
+          <button type="button" class="new-entry">New Entry</button>
+          <button type="button" class="return">My Entries</button>
+          <button type="button" class="main-page">Return to Main</button>
+          <button type="button" class="sign-out">Sign Out</button>
+        </nav>
+      </div>
+
+      <!-- Create Entry Page -->
+      <div id="authenticated-entry">
+        <form class="user-entry">
+          <label class="title-label">Title</label><br />
+          <input class="title-input" type="text" name="entry[title]" placeholder="your work"><br />
+          <label class="text-label">Create</label><br />
+          <textarea class="text-input" name="entry[text]" placeholder="your way..."></textarea><br />
+          <button type="submit">Publish</button>
+        </form><br />
+        <p class="main-view"></p>
+        <button type="button" class="user-page">My Entries</button>
+        <button type="button" class="site-content">All Entries</button>
+        <button type="button" class="main-page">Return to Main</button>
+        <button type="button" class="sign-out">Sign Out</button>
+      </div>
+
+      <!-- Edit Entry Page -->
+      <div id="authenticated-edit">
+        <form class="new-edit">
+          <label class="title-label">Title</label><br />
+          <input class="title-input" type="text" name="entry[title]" placeholder="your work"><br />
+          <label class="text-label">Update</label><br />
+          <textarea class="text-input" name="entry[text]" placeholder="your way..."></textarea><br />
+          <button type="submit">Update</button>
+        </form><br />
+        <p class="main-view"></p>
+        <button type="button" class="user-page">My Entries</button>
+        <button type="button" class="site-content">All Entries</button>
+        <button type="button" class="main-page">Return to Main</button>
+        <button type="button" class="sign-out">Sign Out</button>
+      </div>
+
+      <!-- Site Page -->
+      <div id="authenticated-site">
+        <h2 class="welcome"></h2>
+        <p class="main-view"></p>
+        <nav class="button-bar-site">
+          <button type="button" class="new-entry">Create Entry</button>
+          <button type="button" class="user-page">My Entries</button>
+          <button type="button" class="main-page">Return to Main</button>
+          <button type="button" class="sign-out">Sign Out</button>
+        </nav>
+        <br />
+        <div class="site-entry"></div>
+        <br />
+        <nav class="button-bar-bottom-site">
+          <button type="button" class="new-entry">Create Entry</button>
+          <button type="button" class="user-page">My Entries</button>
+          <button type="button" class="main-page">Return to Main</button>
+          <button type="button" class="sign-out">Sign Out</button>
+        </nav>
+      </div>
+    </body>
+</html>
