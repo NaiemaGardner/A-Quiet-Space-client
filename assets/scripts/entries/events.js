@@ -14,6 +14,9 @@ const entryHandlers = (event) => {
   $('.new-edit').on('submit', onUpdateEntry)
   $('.blog-entry').on('click', onShowEntry)
   $('.single-entry').on('click', onDeleteEntry)
+  // $('.text-left').on('click', onAlignLeft)
+  // $('.text-center').on('click', onAlignCenter)
+  // $('.text-right').on('click', onAlignRight)
 }
 
 // Entry Events
@@ -72,6 +75,26 @@ const onDeleteEntry = (event) => {
     .then(ui.deleteEntrySuccess)
     .catch(ui.failure)
 }
+
+// const onAlign = (event) => {
+//   const left = document.getElementById('text-left')
+//   const center = document.getElementById('text-center')
+//   const right = document.getElementById('text-right')
+//   $(left)
+// }
+
+// const onAlignLeft = (event) => {
+//   event.preventDefault()
+//   $('.card-text').css('text-align', 'left')
+// }
+//
+// const onAlignCenter = (event) => {
+//   $('.card-text').css('text-align', 'center')
+// }
+//
+// const onAlignRight = (event) => {
+//   $('.card-text').css('text-align', 'right')
+// }
 
 module.exports = {
   entryHandlers,

@@ -91,6 +91,16 @@
           <input class="title-input" type="text" name="entry[title]" placeholder="your work"><br />
           <label class="text-label">Create</label><br />
           <textarea class="text-input" name="entry[text]" placeholder="your way..."></textarea><br />
+          <label for="text-left">
+            <input type="radio" id="text-left" onclick="onAlign()" name="align">Align left
+          </label>
+          <label for="text-center">
+            <input type="radio" id="text-center" onclick="onAlign()" name="align" checked>Center Text
+          </label>
+          <label for="text-right">
+            <input type="radio" id="text-right" onclick="onAlign()" name="align">Align Right
+          </label>
+          <br />
           <button type="submit">Publish</button>
         </form><br />
         <p class="main-view"></p>

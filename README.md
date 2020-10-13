@@ -4,9 +4,9 @@ A place for users to create, review, update and delete written blog-style posts.
 
 ## Important Links
 
-- [API Repository](https://github.com/HarlemHubLive/A-Quiet-Space-api)
-- [Deployed Client](https://harlemhublive.github.io/A-Quiet-Place-client/)
-- [Deployed API](https://harlemhublive.github.io/A-Quiet-Place-api/)
+- [API Repository](https://github.com/NaiemaGardner/A-Quiet-Space-api)
+- [Deployed Client](https://naiemagardner.github.io/A-Quiet-Place-client/)
+- [Deployed API](https://safe-bayou-76502.herokuapp.com)
 - [Requirements](https://docs.google.com/document/d/15s8rVgkyDFwYi1Fb26WrWVJZu8ImeXLNJki4ELyH8LY/edit?usp=sharing)
 
 ## Planning Story
